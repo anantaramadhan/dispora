@@ -17,6 +17,7 @@ class LandingPageController extends Controller
 
     public function articel()
     {
+        // return view('landingPage.articel.index', compact('articles'));
 
     }
 

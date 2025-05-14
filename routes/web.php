@@ -25,16 +25,18 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
 
 
-
-
-
-// Route Beranda
+ // Route Beranda
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 
 // Route Artikel
-Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
+Route::get('/artikel', [App\Http\Controllers\Admin\ArtikelController::class, 'index'])->name('artikel');
+// Route lain (tambah, edit, dll.) tetep sama
 Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+// Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::get('/artikel/edit/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'edit'])->name('artikel.edit'); // Tambah {id}
+Route::post('/artikel/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'update'])->name('artikel.update'); // Tambah route update
+Route::delete('/artikel/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'destroy'])->name('artikel.destroy');
+
 
 // Route Terima Event
 Route::get('/terimaevent', [FrontendController::class, 'terimaevent'])->name('terimaevent');
@@ -107,13 +109,13 @@ Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profi
 
 // Route landing Page
 //route home landing oage
-Route::get('/landingPage', [HomeController::class, 'index'])->name(name: 'home');
+Route::get('/', [HomeController::class, 'index'])->name(name: 'home');
 //Route about landing page
 Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
 //Route sector landing page
 Route::get('/landingPage/sektor', [SectorController::class, 'index'])->name('sector');
 //Route articel landing page
-Route::get('/landingPage/artikel', [ArticelController::class, 'index'])->name('articel');
+Route::get('/landingPage/artikel', [App\Http\Controllers\Admin\ArtikelController::class, 'indexLanding'])->name('articel');
 //Route event landing page
 Route::get('/landingPage/event', action: [HomeEventController::class, 'index'])->name('event');
 //Route infografis landing page
