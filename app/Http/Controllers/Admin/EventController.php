@@ -13,4 +13,11 @@ class EventController extends Controller
     }
 
 
+    public function tambah()
+    {
+        // Kembalikan tampilan untuk form tambah artikel
+        return view('admin.event.tambah');
+    }
+
+
 }

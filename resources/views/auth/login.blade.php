@@ -1,86 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Ekraf.IN / Login </title>
+  <title>Ekraf.IN / Login</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  @include('layouts.scripts')
-  @include('layouts.head')
-  
+  @include('admin.layouts.scripts')
+  @include('admin.layouts.head')
+</head>
 
 <body>
-
   <main>
     <div class="container">
-
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-
               <div class="card mb-3">
-
                 <div class="card-body">
-
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
+                    <h5 class="card-title text-center pb-0 fs-4">Masuk ke Akun Anda</h5>
+                    <p class="text-center small">Masukkan nama pengguna & kata sandi Anda untuk masuk</p>
                   </div>
-
                   <form class="row g-3 needs-validation" novalidate>
-
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
+                      <label for="yourUsername" class="form-label">Nama Pengguna</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
+                        <div class="invalid-feedback">Harap masukkan nama pengguna Anda.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
+                      <label for="yourPassword" class="form-label">Kata Sandi</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <div class="invalid-feedback">Harap masukkan kata sandi Anda!</div>
                     </div>
 
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                        <label class="form-check-label" for="rememberMe">Ingat saya</label>
                       </div>
                     </div>
+
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" type="submit">Masuk</button>
                     </div>
+
                     <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
+                      <p class="small mb-0">Lupa kata sandi? <a href="{{ route('lupasandi') }}">Klik di sini</a> untuk mengatur ulang kata sandi.</p>
                     </div>
                   </form>
-
                 </div>
               </div>
 
               <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                <!-- Semua tautan di footer harus tetap utuh. -->
+                <!-- Anda bisa menghapus tautan hanya jika Anda membeli versi pro. -->
+                <!-- Informasi lisensi: https://bootstrapmade.com/license/ -->
+                <!-- Beli versi pro dengan formulir kontak PHP/AJAX yang berfungsi: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                Dirancang oleh <a href="https://bootstrapmade.com/">Ekraf.IN Teams</a>
               </div>
 
             </div>
           </div>
         </div>
-
       </section>
-
     </div>
   </main><!-- End #main -->
 

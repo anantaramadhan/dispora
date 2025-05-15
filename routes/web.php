@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LupaSandiController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
 
@@ -13,13 +14,23 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route dashboard
+
+//route lupa sandi
+Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
+
+
+ // Route Beranda
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 
 // Route Artikel
-Route::get('/artikel', [FrontendController::class, 'artikel'])->name('artikel');
+Route::get('/artikel', [App\Http\Controllers\Admin\ArtikelController::class, 'index'])->name('artikel');
+// Route lain (tambah, edit, dll.) tetep sama
 Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+// Route::get('/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::get('/artikel/edit/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'edit'])->name('artikel.edit'); // Tambah {id}
+Route::post('/artikel/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'update'])->name('artikel.update'); // Tambah route update
+Route::delete('/artikel/{id}', [App\Http\Controllers\Admin\ArtikelController::class, 'destroy'])->name('artikel.destroy');
+
 
 // Route Terima Event
 Route::get('/terimaevent', [FrontendController::class, 'terimaevent'])->name('terimaevent');
@@ -42,7 +53,7 @@ Route::get('/datasektor', [FrontendController::class, 'datasektor'])->name('data
 Route::get('/datasektor/sektor/info', [SektorController::class, 'info'])->name('sektor.info');
 
 // Route Profil
-Route::get('/profil', [FrontendController::class, 'profil'])->name('profil');
+Route::get('admin/profil', [FrontendController::class, 'profil'])->name('admin.profil');
 
 
 
@@ -99,7 +110,7 @@ use App\Http\Controllers\LandingPage\GraphController;
 use App\Http\Controllers\LandingPage\SectorController;
 
 //route home landing oage
-Route::get('/landingPage', [HomeController::class, 'index'])->name(name: 'home');
+Route::get('/', [HomeController::class, 'index'])->name(name: 'home');
 //Route about landing page
 Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
 //Route sector landing page

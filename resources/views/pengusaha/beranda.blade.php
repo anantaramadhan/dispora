@@ -88,36 +88,32 @@
                   <table class="table table-borderless datatable">
                     <thead>
                       <tr>
-                        <th scope="col">ID Produk</th>
+                        <th scope="col">Foto Produk</th>
                         <th scope="col">Nama Produk</th>
-                        <th scope="col">Kategori</th>
+                        <th scope="col">Deskripsi</th>
                         <th scope="col">Harga</th>
-                        <th scope="col">Stok</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#">001</a></th>
+                        <td><img src="path_to_image/product_a.jpg" alt="Produk A" style="width: 50px; height: 50px; object-fit: cover;"></td>
                         <td>Produk A</td>
-                        <td><span class="badge bg-success">Elektronik</span></td>
+                        <td>Deskripsi singkat untuk Produk A, yang mencakup fitur dan manfaatnya.</td>
                         <td>Rp 500,000</td>
-                        <td>50</td>
                       </tr>
 
                       <tr>
-                        <th scope="row"><a href="#">002</a></th>
+                        <td><img src="path_to_image/product_b.jpg" alt="Produk B" style="width: 50px; height: 50px; object-fit: cover;"></td>
                         <td>Produk B</td>
-                        <td><span class="badge bg-info">Pakaian</span></td>
+                        <td>Deskripsi singkat untuk Produk B, yang mencakup fitur dan manfaatnya.</td>
                         <td>Rp 150,000</td>
-                        <td>120</td>
                       </tr>
 
                       <tr>
-                        <th scope="row"><a href="#">003</a></th>
+                        <td><img src="path_to_image/product_c.jpg" alt="Produk C" style="width: 50px; height: 50px; object-fit: cover;"></td>
                         <td>Produk C</td>
-                        <td><span class="badge bg-warning">Makanan</span></td>
+                        <td>Deskripsi singkat untuk Produk C, yang mencakup fitur dan manfaatnya.</td>
                         <td>Rp 30,000</td>
-                        <td>200</td>
                       </tr>
                     </tbody>
                   </table>

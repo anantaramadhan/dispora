@@ -9,11 +9,10 @@
   @include('admin.layouts.header')
   @include('admin.layouts.sidebar')
 
-
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Profile</h1>
+      <h1>Profil</h1>
     </div><!-- End Page Title -->
 
     <section class="section profile">
@@ -62,19 +61,15 @@
                     <div class="col-lg-9 col-md-8">Eko Pranoto</div>
                   </div>
 
-
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Nomor Telepon</div>
                     <div class="col-lg-9 col-md-8">(+62) 486-3538 -29071</div>
                   </div>
 
-
-
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
                     <div class="col-lg-9 col-md-8">disporangkgmail.com</div>
                   </div>
-
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Kata sandi</div>
@@ -105,7 +100,6 @@
                       </div>
                     </div>
 
-
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div class="col-md-8 col-lg-9">
@@ -121,9 +115,12 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Kata sandi</label>
+                      <label for="Password" class="col-md-4 col-lg-3 col-form-label">Kata sandi</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="password" value="passwordlama">
+                        <div class="input-group">
+                          <input name="password" type="password" class="form-control" id="password" value="passwordlama">
+                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('password')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
+                        </div>
                       </div>
                     </div>
 
@@ -134,8 +131,6 @@
 
                 </div>
 
-                
-
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
                   <form>
@@ -143,21 +138,30 @@
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Kata Sandi Lama</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <div class="input-group">
+                          <input name="currentpassword" type="password" class="form-control" id="currentPassword">
+                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('currentPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Kata Sandi Baru</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <div class="input-group">
+                          <input name="newpassword" type="password" class="form-control" id="newPassword">
+                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('newPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
+                        </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Ulangi Kata Sandi</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        <div class="input-group">
+                          <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                          <button type="button" class="btn btn-link" onclick="togglePasswordVisibility('renewPassword')"><i id="eye-icon" class="bi bi-eye-slash"></i></button>
+                        </div>
                       </div>
                     </div>
 
@@ -178,5 +182,23 @@
     </section>
 
   </main><!-- End #main -->
+
+  <script>
+    function togglePasswordVisibility(id) {
+      const passwordField = document.getElementById(id);
+      const eyeIcon = document.getElementById("eye-icon");
+
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.classList.remove("bi-eye-slash");
+        eyeIcon.classList.add("bi-eye");
+      } else {
+        passwordField.type = "password";
+        eyeIcon.classList.remove("bi-eye");
+        eyeIcon.classList.add("bi-eye-slash");
+      }
+    }
+  </script>
+
 </body>
 </html>

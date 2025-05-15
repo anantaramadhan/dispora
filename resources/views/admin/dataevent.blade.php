@@ -22,13 +22,16 @@
               <!-- Kolom Pencarian Terpisah -->
               <div class="d-flex justify-content-between mb-3">
                 <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
-                <!-- Button Filter -->
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="bi bi-funnel"></i> Filter
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Filter 1</a>
-                  <a class="dropdown-item" href="#">Filter 2</a>
+                
+                <!-- Button Filter dan Tambah di sebelah kanan -->
+                <div class="d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> Filter
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Filter 1</a>
+                    <a class="dropdown-item" href="#">Filter 2</a>
+                  </div>
                 </div>
               </div>
 
@@ -129,9 +132,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Modal Hapus Event -->
-  <!-- (Sama seperti modal Hapus sebelumnya) -->
 
   <!-- JavaScript untuk Pencarian -->
   <script>

@@ -2,13 +2,13 @@
 
   <ul class="sidebar-nav" id="sidebar-nav">
 
-    <!-- Menu Dashboard -->
+    <!-- Menu Beranda -->
     <li class="nav-item">
       <a class="nav-link @if(Request::is('home')) active @else collapsed @endif" href="{{ route('home') }}">
         <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
+        <span>Beranda</span>
       </a>
-    </li><!-- End Dashboard Nav -->
+    </li><!-- End Beranda Nav -->
 
     <!-- Menu Artikel -->
     <li class="nav-item">
@@ -60,9 +60,9 @@
 
     <!-- Menu Profil -->
     <li class="nav-item">
-      <a class="nav-link @if(Request::is('profil')) active @else collapsed @endif" href="{{ route('profil') }}">
+      <a class="nav-link @if(Request::is('admin.profil')) active @else collapsed @endif" href="{{ route('admin.profil') }}">
         <i class="bi bi-person"></i>
-        <span>Profile</span>
+        <span>Profil</span>
       </a>
     </li><!-- End Profil Nav -->
 
