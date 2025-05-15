@@ -145,3 +145,9 @@ h1 {
     box-shadow: none !important;
     border-color: #ced4da !important; /* default border color Bootstrap */
 }
+
+
+.form-control::placeholder {
+    color: rgb(182, 182, 182);
+    opacity: 1;
+  }

@@ -120,7 +120,7 @@
             <div class="overflows pb-4 gap-4 d-flex flex-row element px-4 ">
 
                 <?php foreach ($data as $item): ?>
-                <div class="py-4 px-4 rounded-4 shadow w-auto contentSector zoom-card">
+                <div class="py-4 px-4 rounded-4 shadow w-auto contentSector zoom-card boxSector">
                     <div class="d-flex flex-column flex-sm-row align-items-center gap-4 ">
                         <img src="{{ asset($item['gambar']) }}" alt="" class="svgSector">
 

@@ -10,12 +10,41 @@ gsap.to(".box", {
     duration: 1.0,
 });
 
+gsap.from(".boxSector", {
+    scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
+    y: -100,
+    duration: 1.0,
+    DelayNode: 0.5,
+});
+
+// ZOOM CARD 0.5
 const cards = document.querySelectorAll(".zoom-card");
 
 cards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
         gsap.to(card, {
             scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+        });
+    });
+
+    card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+        });
+    });
+});
+
+// ZOOM CARD 0.3
+const card3 = document.querySelectorAll(".zoom-card-3");
+
+card3.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+            scale: 1.03,
             duration: 0.3,
             ease: "power2.out",
         });

@@ -7,12 +7,6 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
-use App\Http\Controllers\LandingPage\HomeController;
-use App\Http\Controllers\LandingPage\AboutController;
-use App\Http\Controllers\LandingPage\ArticelController;
-use App\Http\Controllers\LandingPage\HomeEventController;
-use App\Http\Controllers\LandingPage\GraphController;
-use App\Http\Controllers\LandingPage\SectorController;
 
 // Route login
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -97,6 +91,13 @@ Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profi
 
 
 // Route landing Page
+use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\AboutController;
+use App\Http\Controllers\LandingPage\ArticelController;
+use App\Http\Controllers\LandingPage\HomeEventController;
+use App\Http\Controllers\LandingPage\GraphController;
+use App\Http\Controllers\LandingPage\SectorController;
+
 //route home landing oage
 Route::get('/landingPage', [HomeController::class, 'index'])->name(name: 'home');
 //Route about landing page
@@ -105,7 +106,9 @@ Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('abo
 Route::get('/landingPage/sektor', [SectorController::class, 'index'])->name('sector');
 //Route articel landing page
 Route::get('/landingPage/artikel', [ArticelController::class, 'index'])->name('articel');
+Route::get('/landingPage/artikel/detailArticel', [ArticelController::class, 'detailarticel'])->name('detailArticel');
 //Route event landing page
 Route::get('/landingPage/event', action: [HomeEventController::class, 'index'])->name('event');
+Route::get('/landingPage/event/detailEvent', action: [HomeEventController::class, 'detail'])->name(name: 'detailEvent');
 //Route infografis landing page
 Route::get('/landingPage/infografis', action: [GraphController::class, 'index'])->name('graph');

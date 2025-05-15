@@ -13,5 +13,10 @@ class ArticelController extends Controller
         return view('landingPage.articel.index');
     }
 
+    public function detailarticel()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('landingPage.articel.detailArticel');
+    }
 
 }
