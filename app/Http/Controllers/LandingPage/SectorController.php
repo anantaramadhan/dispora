@@ -13,5 +13,10 @@ class   SectorController extends Controller
         return view('landingPage.listSector.index');
     }
 
+    public function detailProduct()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('landingPage.listSector.productSector.detailProduct');
+    }
 
 }

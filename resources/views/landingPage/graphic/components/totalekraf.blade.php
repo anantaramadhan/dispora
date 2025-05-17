@@ -41,7 +41,7 @@
     const data = {
         labels: labels,
         datasets: [{
-            label: '# of Votes',
+            label: 'Jumlah Pelaku Usaha',
             data: [
                 12,
                 19,
@@ -52,29 +52,61 @@
                 10,
                 60,
                 80,
-                12,
+                40,
                 17,
-                19,
+                30,
                 21,
-                23,
+                50,
                 25,
-                28,
+                8,
                 30
             ],
-            
-            borderWidth: 1
+
+            borderWidth: 2,
+            borderColor: '#265780',
+            backgroundColor: '#265780',
         }]
     }
+
+
 
     new Chart(ctx, {
         type: 'line',
         data: data,
+        // options: {
+        //     scales: {
+        //         y: {
+        //             beginAtZero: true
+        //         }
+        //     }
+        // }
+
         options: {
+            plugins: {
+                filler: {
+                    propagate: false,
+                },
+                // title: {
+                //     display: true,
+                //     text: (ctx) => 'Graph: ' +
+                //     ctx.chart.data.datasets[0].fill
+                // }
+            },
+            interaction: {
+                intersect: false,
+            },
             scales: {
+                x: {
+                    ticks: {
+                        color: 'black'
+                    }
+                },
                 y: {
-                    beginAtZero: true
+                    ticks: {
+                        color: 'black'
+                    }
                 }
             }
-        }
+        },
     });
 </script>

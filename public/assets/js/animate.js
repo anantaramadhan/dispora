@@ -4,17 +4,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // gsap code here!
 });
 
-gsap.to(".box", {
+gsap.from(".box", {
     scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
-    x: -100,
+    x: 100,
+    opacity: 0,
     duration: 1.0,
+    ease: "power2.out",
 });
 
+// animasi drop bawah
 gsap.from(".boxSector", {
-    scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
+    // scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
+    scrollTrigger: {
+        trigger: ".boxSector", // animasi dimulai saat container masuk viewport
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true,
+    },
     y: -100,
+    opacity: 0,
     duration: 1.0,
     DelayNode: 0.5,
+    stagger: 0.1, // delay antar elemen
+    ease: "power2.out",
+});
+
+// animasi drop atas
+gsap.from(".boxSectorUp", {
+    // scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
+    scrollTrigger: {
+        trigger: ".boxSectorUp", // animasi dimulai saat container masuk viewport
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1.0,
+    DelayNode: 0.5,
+    stagger: 0.1, // delay antar elemen
+    ease: "power2.out",
 });
 
 // ZOOM CARD 0.5

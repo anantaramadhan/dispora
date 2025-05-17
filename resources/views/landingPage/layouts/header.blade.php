@@ -47,7 +47,7 @@
                             id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Informasi
                         </a>
-                        <ul class="dropdown-menu position-absolute top-100" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu position-absolute py-0 top-100" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('articel')}}">Artikel</a></li>
                             <li><a class="dropdown-item" href="{{route('event')}}">Event</a></li>
                         </ul>

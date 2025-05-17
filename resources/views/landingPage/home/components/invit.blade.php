@@ -9,7 +9,7 @@
             memukau hingga kuliner lezat yang menggugah selera. Mari dukung karya anak bangsa dan jadilah bagian
             dari geliat ekonomi kreatif Nganjuk. Jelajahi sekarang dan temukan inspirasi baru!</p>
 
-        <button
+        <a href="{{route('sector')}}"
             class="btn btn-outline-dark border-2 d-flex flex-row rounded-5 px-5 px-md-0 py-2 align-items-center justify-content-center">
             <p class="m-0  fw-semibold">Cari Kebutuhanmu</p>
             <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"
@@ -17,7 +17,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="m9 5 7 7-7 7" />
             </svg>
-        </button>
+        </a>
     </div>
 
     {{-- svg dan informasi total usaha ekraf --}}

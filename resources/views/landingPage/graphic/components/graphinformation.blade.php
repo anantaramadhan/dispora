@@ -1,24 +1,21 @@
 <section class="container-xxl d-flex flex-column-reverse flex-lg-row py-5 gap-4 align-items-center">
     <div class="w-100">
         <h1 class="d-flex flex-column text">INFOGRAFIS <span class="flex-row text-black">EKRAF NGANJUK</span> </h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie,
-            tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat,
-            quis convallis diam. Sed ut aliquam lacus, id dictum libero. Proin fringilla nunc sem, in volutpat justo
-            sodales nec. Morbi dapibus gravida laoreet. Aenean placerat, ante consectetur semper laoreet, est dui
-            dignissim urna, venenatis commodo sapien felis a elit. Aenean risus diam, facilisis et lorem et, rhoncus
-            molestie libero. Mauris ullamcorper augue id dignissim efficitur.</p>
+        <p>Statistik data mengenai jumlah pelaku ekonomi kreatif di kabupaten nganjuk serta jumlah pelaku ekonomi
+            kreatif per kecamatan yang ada di kabupaten nganjuk. Selain itu disini juga kita bisa melihat berapa
+            rata-rata jumlah ekonomi kreatif per kecamatan</p>
 
         <div class="d-flex  flex-column flex-md-row gap-4">
-            <div class="card p-4 rounded-2 align-items-center w-100">
+            <div class="card p-4 rounded-2 align-items-center w-100 zoom-card boxSector">
                 <p class="text-center">Jumlah Pelaku Ekonomi Kreatif yang ada di Kabupaten Indonesia</p>
                 <h1>9999</h1>
-                <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button>
+                {{-- <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button> --}}
             </div>
 
-            <div class="card p-4 rounded-2 align-items-center w-100">
+            <div class="card p-4 rounded-2 align-items-center w-100 zoom-card boxSector">
                 <p class="text-center">Rata-rata Jumlah Pelaku Ekonomi Kreatif per Kecamatan</p>
                 <h1>9999</h1>
-                <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button>
+                {{-- <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button> --}}
             </div>
         </div>
     </div>

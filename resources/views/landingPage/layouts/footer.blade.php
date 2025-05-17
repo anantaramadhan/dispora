@@ -135,3 +135,4 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
 
 <script src="{{ asset('assets/js/animate.js') }}"></script>
+<script src="{{asset('assets/js/sector.js')}}" ></script>
