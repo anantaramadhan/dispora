@@ -1,37 +1,75 @@
-// Loop untuk setiap item dropdown yang memiliki class 'switch-section'
-document.querySelectorAll(".switch-section").forEach(function (item) {
-    item.addEventListener("click", function (e) {
-        e.preventDefault();
+// document.querySelectorAll(".switch-section").forEach(function (item) {
+//     item.addEventListener("click", function (e) {
+//         e.preventDefault();
 
-        const target = this.getAttribute("data-target");
-        const sectionProduk = document.getElementById("section-event");
-        const sectionUsaha = document.getElementById("section-articel");
+//         const target = this.getAttribute("data-target")?.toLowerCase(); // 'event' atau 'article'
 
-        sectionProduk.classList.remove("show");
-        sectionUsaha.classList.remove("show");
+//         const sectionEvent = document.getElementById("section-event");
+//         const sectionArticle = document.getElementById("section-article");
 
-        setTimeout(() => {
-            if (target === "Event") {
-                sectionUsaha.style.display = "none";
-                sectionProduk.style.display = "block";
-                requestAnimationFrame(() =>
-                    sectionProduk.classList.add("show")
-                );
-            } else {
-                sectionProduk.style.display = "none";
-                sectionUsaha.style.display = "block";
-                requestAnimationFrame(() => sectionUsaha.classList.add("show"));
-            }
-        }, 400);
+//         // Reset semua section
+//         sectionEvent.classList.remove("show");
+//         sectionArticle.classList.remove("show");
 
-        // Update active item di dropdown
-        document
-            .querySelectorAll(".switch-section")
-            .forEach((el) => el.classList.remove("active"));
-        this.classList.add("active");
+//         // Tunggu sebentar untuk memberikan efek transisi saat berpindah
+//         setTimeout(() => {
+//             if (target === "event") {
+//                 sectionEvent.classList.add("show");
+//             } else {
+//                 sectionArticle.classList.add("show");
+//             }
+//         }, 10); // kasih delay kecil biar efek transisi berjalan
 
-        // Ubah teks tombol dropdown
-        // const dropdownBtn = document.querySelector("#dropdown-usaha-produk p");
-        // dropdownBtn.textContent = target === "Product" ? "Produk" : "Usaha";
+//         // Update tombol aktif
+//         document.querySelectorAll(".switch-section").forEach((btn) => {
+//             btn.classList.remove("btn-primary");
+//             btn.classList.add("btn-outline-black");
+//         });
+
+//         this.classList.add("btn-primary");
+//         this.classList.remove("btn-outline-black");
+//     });
+// });
+
+// Fungsi animasi fadeIn
+const fadeIn = el => {
+  gsap.fromTo(el,
+    { opacity: 0},
+    { opacity: 1, duration: 0.8, ease: "power2.out" }
+  );
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionEvent = document.getElementById("section-event");
+  const sectionArticle = document.getElementById("section-article");
+
+  document.querySelectorAll(".switch-section").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+
+      const target = btn.getAttribute("data-target")?.toLowerCase();
+      const activeSection = target === "event" ? sectionEvent : sectionArticle;
+
+      // Reset section
+      [sectionEvent, sectionArticle].forEach(sec => {
+        sec.classList.remove("show");
+        // sec.classList.add("fade-ready");
+      });
+
+      // Tampilkan dan animasikan yang aktif
+    //   setTimeout(() => {
+        activeSection.classList.add("show");
+        // activeSection.classList.remove("fade-ready");
+        fadeIn(activeSection);
+    //   }, 10);
+
+      // Toggle tombol aktif
+      document.querySelectorAll(".switch-section").forEach(b => {
+        b.classList.remove("btn-primary");
+        b.classList.add("btn-outline-black");
+      });
+      btn.classList.add("btn-primary");
+      btn.classList.remove("btn-outline-black");
     });
+  });
 });

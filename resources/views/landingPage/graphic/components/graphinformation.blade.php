@@ -1,22 +1,22 @@
-<section class="container-xxl d-flex flex-column-reverse flex-lg-row py-5 gap-4 align-items-center">
+<section id="graphInformation" class="container-xxl d-flex flex-column-reverse flex-lg-row py-5 gap-4 align-items-center">
     <div class="w-100">
         <h1 class="d-flex flex-column text">INFOGRAFIS <span class="flex-row text-black">EKRAF NGANJUK</span> </h1>
         <p>Statistik data mengenai jumlah pelaku ekonomi kreatif di kabupaten nganjuk serta jumlah pelaku ekonomi
             kreatif per kecamatan yang ada di kabupaten nganjuk. Selain itu disini juga kita bisa melihat berapa
             rata-rata jumlah ekonomi kreatif per kecamatan</p>
 
-        <div class="d-flex  flex-column flex-md-row gap-4">
-            <div class="card p-4 rounded-2 align-items-center w-100 zoom-card boxSector">
+        <div class="d-flex flex-column flex-md-row gap-4">
+            <div class="card w-50 p-4 rounded-2 align-items-center zoom-card boxSector">
                 <p class="text-center">Jumlah Pelaku Ekonomi Kreatif yang ada di Kabupaten Indonesia</p>
                 <h1>9999</h1>
                 {{-- <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button> --}}
             </div>
 
-            <div class="card p-4 rounded-2 align-items-center w-100 zoom-card boxSector">
+            {{-- <div class="card p-4 rounded-2 align-items-center w-100 zoom-card boxSector">
                 <p class="text-center">Rata-rata Jumlah Pelaku Ekonomi Kreatif per Kecamatan</p>
                 <h1>9999</h1>
-                {{-- <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button> --}}
-            </div>
+                <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button>
+            </div> --}}
         </div>
     </div>
 

@@ -2,48 +2,47 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, EaselPlugin, TextPlugin);
     // gsap code here!
-});
 
-gsap.from(".box", {
-    scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
-    x: 100,
-    opacity: 0,
-    duration: 1.0,
-    ease: "power2.out",
-});
+    gsap.from(".box", {
+        scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
+        x: 100,
+        opacity: 0,
+        duration: 1.0,
+        ease: "power2.out",
+    });
 
-// animasi drop bawah
-gsap.from(".boxSector", {
-    // scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
-    scrollTrigger: {
-        trigger: ".boxSector", // animasi dimulai saat container masuk viewport
-        start: "top 80%",
-        toggleActions: "play none none none",
-        once: true,
-    },
-    y: -100,
-    opacity: 0,
-    duration: 1.0,
-    DelayNode: 0.5,
-    stagger: 0.1, // delay antar elemen
-    ease: "power2.out",
-});
+    // animasi drop bawah
+    gsap.from(".boxSector", {
+        // scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
+        scrollTrigger: {
+            trigger: ".boxSector", // animasi dimulai saat container masuk viewport
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+        },
+        y: -100,
+        opacity: 0,
+        duration: 1.0,
+        DelayNode: 0.5,
+        stagger: 0.1, // delay antar elemen
+        ease: "power2.out",
+    });
 
-// animasi drop atas
-gsap.from(".boxSectorUp", {
-    // scrollTrigger: ".boxSector", // start the animation when ".box" enters the viewport (once)
-    scrollTrigger: {
-        trigger: ".boxSectorUp", // animasi dimulai saat container masuk viewport
-        start: "top 80%",
-        toggleActions: "play none none none",
-        once: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1.0,
-    DelayNode: 0.5,
-    stagger: 0.1, // delay antar elemen
-    ease: "power2.out",
+    // animasi drop atas
+    gsap.from(".boxSectorUp", {
+        scrollTrigger: {
+            trigger: ".boxSectorUp", // Animasi dimulai saat .boxSectorUp masuk viewport
+            start: "top 80%", // Trigger saat bagian atas elemen 80% dari tinggi viewport
+            toggleActions: "play none none reset", // Hanya play sekali
+            // once: true, // Jalankan sekali saja
+        },
+        y: 100, // Mulai dari bawah (geser ke atas)
+        opacity: 0, // Mulai dari transparan
+        duration: 1.0, // Durasi animasi
+        delay: 0.5, // Delay sebelum animasi dimulai (jika diperlukan)
+        stagger: 0.1, // Jeda antar elemen jika ada lebih dari satu
+        ease: "power2.out",
+    });
 });
 
 // ZOOM CARD 0.5

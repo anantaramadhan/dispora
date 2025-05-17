@@ -124,7 +124,7 @@
 
     ?>
 
-    <div class="overflows d-flex flex-row gap-4 py-4 px-2">
+    <div class="overflows d-flex flex-row gap-4 py-5 px-2">
         {{-- CARD USAHA --}}
         <?php foreach ($dataUsahaPopuler as $item): ?>
         <div class="shadow rounded-4 zoom-card boxSector">

@@ -123,7 +123,7 @@
     ?>
 
     <h2 class="fw-bold text-black">Produk Terbaru</h2>
-    <div class="overflows d-flex flex-row gap-4 py-4 px-2">
+    <div class="overflows d-flex flex-row gap-4 py-5 px-2">
         {{-- CARD USAHA --}}
         <?php foreach ($dataUsahaTerbaru as $item): ?>
         <div class="shadow rounded-4 zoom-card boxSector">
@@ -132,7 +132,11 @@
             </div>
 
             <div class="p-3">
-                <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
+
+                {{-- TITLE --}}
+                <a href="{{route('detailProduct')}}" class="text-black">
+                    <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
+                </a>
 
                 {{-- HARGA --}}
                 <p class="fs-5 fw-bold"><?= $item['price'] ?></p>

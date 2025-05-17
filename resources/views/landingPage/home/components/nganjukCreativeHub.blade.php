@@ -1,4 +1,4 @@
-<section class="bg-gradients py-5">
+<section id="nganjukCreativeHub" class="bg-gradients py-5">
     <div
         class="scroll-section container-xxl py-5 d-flex flex-column-reverse flex-lg-row align-items-center overflow-hidden px-5 px-lg-0 gap-4">
 

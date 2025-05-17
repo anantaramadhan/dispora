@@ -1,4 +1,4 @@
-<section
+<section id="invite"
     class="scroll-section container-xxl  d-flex flex-column-reverse flex-lg-row align-items-center overflow-hidden py-3 px-5 px-lg-0">
     <div class="d-flex flex-column mt-5 mt-lg-0 w-100">
         {{-- judul dan deskripsi section 1 --}}

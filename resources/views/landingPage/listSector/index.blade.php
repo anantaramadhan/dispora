@@ -8,17 +8,6 @@
         padding-top: 73px;
         background-color: white
     }
-
-    .fade-section {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .fade-section.show {
-        display: block;
-        opacity: 1;
-    }
 </style>
 
 <body>
@@ -69,7 +58,7 @@
                 </div>
 
                 {{-- BUTTON KECAMATAN --}}
-                <div class="dropdown-center">
+                {{-- <div class="dropdown-center">
                     <button
                         class="btn btn-light border-0 rounded-5 shadow-lg h-100 px-4 d-flex flex-row align-items-center gap-2"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,7 +94,7 @@
                         <li><a class="dropdown-item" href="#">Tanjunganom</a></li>
                         <li><a class="dropdown-item" href="#">Wilangan</a></li>
                     </ul>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -187,8 +176,13 @@
     <section class="container-xxl py-4 px-0">
         <h2 class="fw-bold text-black">Map Journey Ekonomi Kreatif Nganjuk</h2>
 
-        <iframe class="rounded-4"
+        {{-- <iframe class="rounded-4"
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126532.05170830055!2d111.95881104562073!3d-7.669534441989568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1746757266520!5m2!1sid!2sid"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.7729056515423!2d111.9043798308188!3d-7.5996760156285355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784ba9d9447a99%3A0x1e4f0169e2940678!2sGedung%20Balai%20Budaya%20Mpu%20Sendok!5e0!3m2!1sid!2sid!4v1747469586066!5m2!1sid!2sid"
             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
@@ -207,6 +201,6 @@
 </body>
 
 
-<script src="{{asset('assets/js/sector.js')}}" ></script>
+<script src="{{ asset('assets/js/sector.js') }}"></script>
 
 </html>

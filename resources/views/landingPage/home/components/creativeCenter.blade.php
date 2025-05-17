@@ -1,4 +1,4 @@
-<section class="d-flex flex-column align-items-center py-5">
+<section id="creativeCenter" class="d-flex flex-column align-items-center py-5">
     <h1 class="mb-5">Creative Center</h1>
 
     <div class="container-fluid">

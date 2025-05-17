@@ -96,7 +96,7 @@
             'category' => 'Kategori Sektor',
         ],
     ];
-
+    
     // fungsi sort kata
     // function potong_kata($teks, $jumlahKata = 20)
     // {
@@ -108,7 +108,7 @@
     //         return $teks;
     //     }
     // }
-
+    
     ?>
 
     <div class="overflows d-flex flex-row gap-4 py-4 px-2">
@@ -120,7 +120,11 @@
             </div>
 
             <div class="p-3">
-                <h4><?= $item['title'] ?></h4>
+
+                {{-- TITLE --}}
+                <a href="{{ route('detailbussines') }}" class="text-black">
+                    <h4><?= $item['title'] ?></h4>
+                </a>
                 {{-- LOKASI --}}
                 <div class="d-flex flex-row">
                     <svg class="w-6 h-6 text-danger dark:text-white" aria-hidden="true"

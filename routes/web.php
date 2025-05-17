@@ -112,14 +112,17 @@ use App\Http\Controllers\LandingPage\SectorController;
 //route home landing oage
 Route::get('/', [HomeController::class, 'index'])->name(name: 'home');
 //Route about landing page
-Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
+Route::get('/tentang', [AboutController::class, 'index'])->name('about');
 //Route sector landing page
-Route::get('/landingPage/sektor', [SectorController::class, 'index'])->name('sector');
+Route::get('/sektor', [SectorController::class, 'index'])->name('sector');
+Route::get('/sektor/product/detailProduk', [SectorController::class, 'detailProduct'])->name('detailProduct');
+Route::get('/sektor/product/detailbussines', [SectorController::class, 'detailBussines'])->name('detailbussines');
+Route::get('/sektor/product/aduanbussines', [SectorController::class, 'businessComplaints'])->name('businessComplaints');
 //Route articel landing page
-Route::get('/landingPage/artikel', [ArticelController::class, 'index'])->name('articel');
-Route::get('/landingPage/artikel/detailArticel', [ArticelController::class, 'detailarticel'])->name('detailArticel');
+Route::get('/artikel', [ArticelController::class, 'index'])->name('articel');
+Route::get('/artikel/detailArticel', [ArticelController::class, 'detailarticel'])->name('detailArticel');
 //Route event landing page
-Route::get('/landingPage/event', action: [HomeEventController::class, 'index'])->name('event');
-Route::get('/landingPage/event/detailEvent', action: [HomeEventController::class, 'detail'])->name(name: 'detailEvent');
+Route::get('/event', action: [HomeEventController::class, 'index'])->name('event');
+Route::get('/event/detailEvent', action: [HomeEventController::class, 'detail'])->name(name: 'detailEvent');
 //Route infografis landing page
-Route::get('/landingPage/infografis', action: [GraphController::class, 'index'])->name('graph');
+Route::get('/infografis', action: [GraphController::class, 'index'])->name('graph');
