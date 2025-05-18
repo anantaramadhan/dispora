@@ -1,25 +1,52 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ArtikelController;
-use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LupaSandiController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
+use App\Http\Controllers\Admin\SektorController;
+use App\Http\Controllers\Admin\ArtikelController;
+
+use App\Http\Controllers\Auth\LupaSandiController;
+use App\Http\Controllers\Auth\GoogleLoginController;
+use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\Pengusaha\ProfilController;
+use App\Http\Controllers\LandingPage\AboutController;
+use App\Http\Controllers\LandingPage\GraphController;
+
+use App\Http\Controllers\Pengusaha\BerandaController;
+use App\Http\Controllers\Pengusaha\EventmuController;
+use App\Http\Controllers\LandingPage\SectorController;
+use App\Http\Controllers\LandingPage\ArticelController;
+use App\Http\Controllers\LandingPage\HomeEventController;
+use App\Http\Controllers\Pengusaha\ProdukUsahaController;
+use App\Http\Controllers\Pengusaha\InformasiUsahaController;
+
+
+Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
+Route::get('/auth/callback/google', [GoogleLoginController::class, 'handleGoogleCallback']);
+Route::post('/logout', [AuthController::class, 'logout']);
+
+
+
+
+
+
+
+
 
 // Route login
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-
 //route lupa sandi
 Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
 
 
- // Route Beranda
+// Route Beranda
 Route::get('home', [FrontendController::class, 'index'])->name('home');
 
 // Route Artikel
@@ -59,12 +86,7 @@ Route::get('admin/profil', [FrontendController::class, 'profil'])->name('admin.p
 
 
 // ROUTE UNTUK PENGUSAHA
-use App\Http\Controllers\Pengusaha\InformasiUsahaController;
-use App\Http\Controllers\Pengusaha\EventmuController;
-use App\Http\Controllers\Pengusaha\ProdukUsahaController;
-use App\Http\Controllers\Pengusaha\ProfilController;
-use App\Http\Controllers\Pengusaha\BerandaController;
-use App\Http\Controllers\Pengusaha\AuthController;
+
 
 
 
@@ -74,7 +96,7 @@ Route::get('/pengusaha/masuk', [AuthController::class, 'showmasuk'])->name('masu
 Route::get('/pengusaha/daftar', [AuthController::class, 'showdaftar'])->name('daftar');
 
 // ROUTE BERANDA
-Route::get('/pengusaha/beranda', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/pengusaha', [BerandaController::class, 'index'])->name('beranda');
 
 
 // ROUTE EVENTMU
@@ -102,12 +124,7 @@ Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profi
 
 
 // Route landing Page
-use App\Http\Controllers\LandingPage\HomeController;
-use App\Http\Controllers\LandingPage\AboutController;
-use App\Http\Controllers\LandingPage\ArticelController;
-use App\Http\Controllers\LandingPage\HomeEventController;
-use App\Http\Controllers\LandingPage\GraphController;
-use App\Http\Controllers\LandingPage\SectorController;
+
 
 //route home landing oage
 Route::get('/', [HomeController::class, 'index'])->name(name: 'home');

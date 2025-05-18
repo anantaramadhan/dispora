@@ -34,13 +34,14 @@
                         <a href="{{ route('home') }}" class="nav-link fw-medium fs-6 text-black mx-4">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('about')}}" class="nav-link fw-medium fs-6 text-black mx-4">Tentang</a>
+                        <a href="{{ route('about') }}" class="nav-link fw-medium fs-6 text-black mx-4">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('graph')}}" class="nav-link fw-medium fs-6 text-black mx-4">Info Grafis</a>
+                        <a href="{{ route('graph') }}" class="nav-link fw-medium fs-6 text-black mx-4">Info Grafis</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('sector')}}" class="nav-link fw-medium fs-6 text-black mx-4">Daftar Subsektor</a>
+                        <a href="{{ route('sector') }}" class="nav-link fw-medium fs-6 text-black mx-4">Daftar
+                            Subsektor</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle fw-medium fs-6 text-black mx-4" href="#"
@@ -48,15 +49,17 @@
                             Informasi
                         </a>
                         <ul class="dropdown-menu position-absolute py-0 top-100" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{route('articel')}}">Artikel</a></li>
-                            <li><a class="dropdown-item" href="{{route('event')}}">Event</a></li>
+                            <li><a class="dropdown-item" href="{{ route('articel') }}">Artikel</a></li>
+                            <li><a class="dropdown-item" href="{{ route('event') }}">Event</a></li>
                         </ul>
                     </li>
                 </ul>
 
                 {{-- button masuk dan profil --}}
                 <div class="me-2">
-                    <button class="btn btn-primary rounded-5 px-4">Masuk</button>
+                    <a href="{{ route('login-google') }}" class="btn btn-primary rounded-5 px-4">
+                        Masuk
+                    </a>
                 </div>
 
                 {{-- hamburger button --}}
@@ -67,7 +70,7 @@
                 </button>
             </div>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         {{-- dropdown --}}
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ms-auto d-flex justify-content-center align-items-start">
