@@ -30,6 +30,12 @@
                 <h5 class="m-0 fw-bold">1 Mei 2025</h5>
             </div>
 
+            {{-- WKtu --}}
+            <div class="d-flex flex-column mb-4">
+                <p class="m-0 fw-semibold">Waktu Event:</p>
+                <h5 class="m-0 fw-bold">08.00-Selesai</h5>
+            </div>
+
             <div class="mb-4 d-flex flex-column">
                 <h4 class="m-0 fw-semibold">Deskripsi Event:</h4>
                 <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et
@@ -53,60 +59,144 @@
     </section>
 
     <?php
-
+    
     //data card atas
     $data = [
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
         [
             'gambar' => 'assets/svg/arsitektur.svg',
-            'title' => 'Animasi Jumbo tembus 1 juta penayangan per 17 April 2025',
-            'sumber' => 'Detik.com',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
+            'tanggal' => '1 Mei 2025',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
+        ],
+        [
+            'gambar' => 'assets/svg/arsitektur.svg',
+            'title' => 'Java Tech Exhibition',
+            'waktu' => '08.00-selesai',
             'tanggal' => '1 Mei 2025',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum eratLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna orci, porta et purus molestie, tempus eleifend eros. Pellentesque elementum felis at dolor dictum pretium. Phasellus ac interdum erat',
         ],
     ];
-
+    
     // fungsi sort kata
     function potong_kata($teks, $jumlahKata = 30)
     {
@@ -118,7 +208,7 @@
             return $teks;
         }
     }
-
+    
     function potong_judul($teks, $jumlahKata = 10)
     {
         $kataArray = explode(' ', $teks); // Pecah teks jadi array kata
@@ -132,32 +222,40 @@
     ?>
 
     {{-- event lain --}}
-    <section class="container-xxl text-black">
+    <section class="container-xxl d-flex flex-column">
         <h2 class="fw-bold">Event Lainnya</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
-            <?php foreach ($data as $item): ?>
-            <div class="col">
-                <div class=" card rounded-4 overflow-hidden d-flex flex-column zoom-card-3">
+
+        <div class="overflows d-flex flex-row gap-4 py-4 px-2">
+            <?php 
+            $counter = 0;
+            foreach ($data as $item):
+            if ($counter >= 10) break;
+            $counter++;
+        ?>
+            <div class="shadow rounded-4 zoom-card boxSectorUp">
+                <div class="overflow-hidden rounded-2" style="width: 400px;">
                     <img src="{{ asset('assets/img/logoekraf.png') }}" alt="" class="w-100">
+                </div>
 
-                    <div class="w-auto p-3 d-flex flex-column justify-content-between">
-                        <div class="w-auto mb-4">
-                            <h5 class="m-0 fw-bold"><?= potong_judul($item['title']) ?></h5>
-                            <p class="m-0"><?= potong_kata($item['description']) ?></p>
-                        </div>
+                <div class="p-4">
+                    <a class="text-black" href="{{ route('detailEvent') }}">
+                        <h3 class="fw-bold"><?= potong_judul($item['title']) ?></h3>
+                    </a>
 
-                        <div class="w-auto d-flex flex-column ">
-                            <p class="m-0 fw-semibold text"><?= $item['sumber'] ?></p>
-                            <div class="d-flex flex-row w-100 justify-content-between">
-                                <p class="m-0"><?= $item['tanggal'] ?></p>
-                                <a href="{{ route(name: 'detailEvent') }}">Selengkapnya > </a>
-                            </div>
+                    <p><?= potong_kata($item['description']) ?></p>
+                    <div class="w-100 d-flex justify-content-between align-items-end">
+                        <div class="d-flex flex-column">
+                            <p class="m-0 fw-semibold"><?= $item['tanggal'] ?></p>
+                            <p class="m-0 fw-semibold"><?= $item['waktu'] ?></p>
                         </div>
+                        <a href="">Selengkapnya ></a>
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+            <?php endforeach;?>
+
         </div>
+
     </section>
 
     @include('landingPage.layouts.footer')

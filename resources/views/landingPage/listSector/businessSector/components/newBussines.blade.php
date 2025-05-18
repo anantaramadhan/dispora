@@ -1,4 +1,4 @@
-<div>
+<div class="mt-4">
     <?php
     // data card bawah
     $dataUsahaTerbaru = [
@@ -109,7 +109,7 @@
     
     ?>
 
-    <h2 class="fw-bold text-black">Usaha Terbaru</h2>
+    <h2 class="fw-bold text-black mb-0">Usaha Terbaru</h2>
     <div class="overflows d-flex flex-row gap-4 py-4 px-2">
         {{-- CARD USAHA --}}
         <?php foreach ($dataUsahaTerbaru as $item): ?>

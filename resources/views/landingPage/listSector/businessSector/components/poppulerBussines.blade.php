@@ -1,5 +1,5 @@
-<div class="w-100">
-    <h2 class="fw-bold text-black">Usaha Populer</h2>
+<div class="w-100 mt-4">
+    <h2 class="fw-bold text-black mb-0">Usaha Populer</h2>
 
     <?php
     // data card bawah

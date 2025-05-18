@@ -34,11 +34,13 @@
     @include('landingPage.layouts.header')
 
     {{-- SECTION DETAIL PRODUK --}}
-    <section id="detailUsahaHead" class="container-xxl d-flex flex-column gap-4 rounded-2 overflow-hidden mt-4 p-4"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  /* lapisan hitam 50% */ url('{{ asset('assets/img/fotousaha2.jpg') }}'); background-size: cover;">
+    <section id="detailUsahaHead"
+        class="container-xxl d-flex px-4">
 
-        {{-- SEARCH --}}
-        <div class="input-group mb-2 mb-md-0 d-flex flex-row rounded-pill overflow-hidden py-1 px-4"
+        <div class="w-100 d-flex flex-column rounded-2 gap-4 overflow-hidden mt-lg-4 mt-0 p-4"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  /* lapisan hitam 50% */ url('{{ asset('assets/img/fotousaha2.jpg') }}'); background-size: cover;">
+            {{-- SEARCH --}}
+            {{-- <div class="input-group mb-2 mb-md-0 d-flex flex-row rounded-pill overflow-hidden py-1 px-4"
             style="border: 1px solid #ced4da;">
             <span class="input-group-text bg-transparent border-0 ps-3 w-auto">
                 <svg class="w-100 h-auto text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -49,46 +51,48 @@
             </span>
             <input type="text" class="form-control border-0 ps-2 bg-transparent text-white " style="outline: none; "
                 placeholder="Cari Artikel Berdasarkan Judul">
-        </div>
+        </div> --}}
 
-        {{-- PROFIL USAHA --}}
-        <div class="d-flex flex-row justify-content-between ">
-            <div class="d-flex flex-row gap-4 align-items-center">
-                {{-- LOGO USAHA --}}
-                <div><img src="{{ asset('assets/img/logoekraf.png') }}" alt=""
-                        class="rounded-pill object-fit-cover" style="width: 120px; height: 120px;"></div>
+            {{-- PROFIL USAHA --}}
+            <div class="d-flex flex-md-row flex-column justify-content-between ">
+                <div class="d-flex flex-md-row flex-column gap-4 align-items-center mb-md-0 mb-4">
+                    {{-- LOGO USAHA --}}
+                    <div><img src="{{ asset('assets/img/logoekraf.png') }}" alt=""
+                            class="rounded-pill object-fit-cover" style="width: 120px; height: 120px;"></div>
 
-                <div class="d-flex gap-2 flex-column ">
-                    {{-- NAMA USAHA --}}
-                    <p class="mb-0 fw-bold fs-5 text-white">NAMA USAHA</p>
+                    <div class="d-flex gap-2 flex-column ">
+                        {{-- NAMA USAHA --}}
+                        <p class="mb-0 fw-bold fs-5 text-white">NAMA USAHA</p>
 
+                        {{-- ULASAN USAHA --}}
+                        <p class="mb-0 text-white">Pemilik: FUFU FAFA</p>
+                    </div>
+                </div>
+                {{-- TOMBOL LIHAT USAHA --}}
+                <div class="d-flex flex-column gap-2 align-items-center justify-content-center">
                     {{-- ULASAN USAHA --}}
-                    <p class="mb-0 text-white">Pemilik: FUFU FAFA</p>
+                    <p class="mb-0 text-white">120 Ulasan Usaha</p>
+
+                    {{-- BUTTON TAMBAH ADUAN USAHA --}}
+                    <a href="{{ route('businessComplaints') }}"
+                        class="btn btn-danger rounded-5 px-4 d-flex align-items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                            class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+
+                        Adukan Usaha</a>
                 </div>
             </div>
-            {{-- TOMBOL LIHAT USAHA --}}
-            <div class="d-flex flex-column gap-2 align-items-center justify-content-center">
-                {{-- ULASAN USAHA --}}
-                <p class="mb-0 text-white">120 Ulasan Usaha</p>
-
-                {{-- BUTTON TAMBAH ADUAN USAHA --}}
-                <a href="{{ route('businessComplaints') }}"
-                    class="btn btn-danger rounded-5 px-4 d-flex align-items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                        class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                    </svg>
-
-                    Adukan Usaha</a>
-            </div>
         </div>
+
 
     </section>
 
     {{-- LOKASI, KONTAK, DWSKRIPSI --}}
-    <section class="container-xxl d-flex flex-column mt-4 gap-4 text-black">
-        <div class="d-flex flex-row justify-content-between px-4">
+    <section id="contactLocation" class="container-xxl d-flex flex-column mt-4 gap-4 px-4 text-black">
+        <div class="d-flex flex-md-row flex-column justify-content-between mb-md-0 mb-4">
             {{-- Lokasi --}}
             <div class="d-flex flex-row gap-2" style="max-width: 500px">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red"
@@ -99,7 +103,7 @@
             </div>
 
             {{-- Nomer --}}
-            <div class="d-flex flex-row gap-2">
+            <div class="d-flex flex-row gap-2 mb-md-0 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-telephone-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -155,7 +159,7 @@
     </section>
 
     {{-- PRODUK TERBARU --}}
-    <section class="container-xxl py-5">
+    <section class="container-xxl py-5 px-4">
         <div class="w-100">
             <h2 class="fw-bold text-black mb-0">Produk Terbaru</h2>
 
@@ -330,7 +334,7 @@
     </section>
 
     {{-- DAFTAR PRODUK  --}}
-    <section class="container-xxl py-5">
+    <section class="container-xxl py-5 px-4">
         <div class="w-100">
             <h2 class="fw-bold text-black mb-0">Daftar Produk</h2>
 
@@ -504,9 +508,9 @@
 
     </section>
 
-    <section class="py-5 boxSectorUp" style="background-color: #D2DAF1">
+    <section class="py-5 px-4 boxSectorUp" style="background-color: #D2DAF1">
         <div class="container-xxl d-flex flex-row justify-content-between">
-            <div class="d-flex flex-column gap-4 w-50">
+            <div class="d-flex flex-column gap-4 w-100">
                 <h1 class="fw-bold mb-4">Tambahkan </br> Ulasanmu!!</h1>
                 <div class="d-flex flex-column gap-4">
                     <textarea class="rounded-4 bg-transparent text-black p-3" style="height: 140px" rows="4" maxlength="500"
@@ -518,8 +522,9 @@
                 </div>
             </div>
 
-            <svg class="w-50 max-w-[16rem] h-40 text-gray-800 dark:text-white" aria-hidden="true" width="556"
-                height="421" viewBox="0 0 556 421" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-100 max-w-[16rem] h-40 text-gray-800 dark:text-white d-md-flex d-none" aria-hidden="true"
+                width="556" height="421" viewBox="0 0 556 421" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M517 189C517 293.382 432.382 378 328 378C223.618 378 139 293.382 139 189C139 84.6182 223.618 0 328 0C432.382 0 517 84.6182 517 189Z"
                     fill="url(#paint0_linear_344_2214)" />
@@ -782,84 +787,85 @@
     // data ulasan
     $dataUlasanUsaha = [
         [
+            'name' => 'You',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
+            'time' => '11.00, 21 Oktober 2025',
+            'token' => 'true',
+        ],
+        [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
-            'time' => '11.00, 21 Oktober 2025',
-        ],
-        [
-            'name' => 'Adam Smith',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                    fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                    placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                    mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                    malesuada tincidunt ut eleifend odio.',
+                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                        malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
     ];
@@ -879,23 +885,49 @@
     ?>
 
     {{-- ULASAN USAHA --}}
-    <section class="container-xxl d-flex flex-column text-black py-5">
+    <section class="container-xxl d-flex flex-column text-black py-5 px-4">
 
         <h2 class="fw-bold mb-5">Ulasan Usaha</h2>
 
-        <div class="d-flex flex-column gap-4">
+        <div class="d-flex flex-column gap-5">
 
             <?php foreach ($dataUlasanUsaha as $item): ?>
 
-            <div class="boxSectorUp">
+            <div class="boxSectorUp d-flex flex-column gap-3">
                 <div class="d-flex flex-row justify-content-between">
-                    <h4 class="fw-bold text-primary-emphasis"><?= $item['name'] ?></h4>
-                    <p class="fw-semibold text-secondary"><?= $item['time'] ?></p>
+                    <h4 class="fw-bold text-primary-emphasis mb-0"><?= $item['name'] ?></h4>
+                    <p class="fw-semibold text-secondary mb-0"><?= $item['time'] ?></p>
                 </div>
 
-                <div class="card rounded-2 p-4 zoom-card">
+                <div class="shadow-sm border-1 border-black rounded-2 p-4 zoom-card mb-0">
                     <p class="mb-0" style="cursor: default;"><?= $item['description'] ?></p>
                 </div>
+
+                <?php if (isset($item['token']) && $item['token']): ?>
+                <div class="d-flex  justify-content-end gap-2">
+                    {{-- <a class="btn btn-sm btn-primary rounded-pill px-4">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
+                        </svg>
+                        Edit Ulasan
+                    </a> --}}
+                    <a class="btn btn-sm btn-outline-danger rounded-pill px-4">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                        </svg>
+
+                        Hapus Ulasan
+                    </a>
+                </div>
+                <?php endif; ?>
             </div>
             <?php endforeach;?>
         </div>

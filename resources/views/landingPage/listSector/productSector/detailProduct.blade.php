@@ -26,7 +26,7 @@
     @include('landingPage.layouts.header')
 
     {{-- SECTION DETAIL PRODUK --}}
-    <section id="detailProduct" class="container-xxl d-flex flex-row gap-4 py-5">
+    <section id="detailProduct" class="container-xxl d-flex flex-lg-row flex-column gap-4 py-5">
 
         {{-- CONTENT KIRI --}}
         <div class="container" style="max-width: 350px;">
@@ -77,7 +77,7 @@
             </div>
 
             {{-- PROFIL USAHA --}}
-            <div class="d-flex flex-row justify-content-between mb-4">
+            <div class="d-flex flex-md-row flex-column justify-content-between mb-4 gap-4">
                 <div class="d-flex flex-row gap-4 align-items-center">
                     {{-- LOGO USAHA --}}
                     <div><img src="{{ asset('assets/img/logoekraf.png') }}" alt=""
@@ -92,12 +92,12 @@
                 </div>
                 {{-- TOMBOL LIHAT USAHA --}}
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-primary rounded-5 px-4">Lihat Usaha</button>
+                    <a href="{{route('detailbussines')}}" class="btn btn-primary rounded-5 px-4 w-100">Lihat Usaha</a>
                 </div>
             </div>
 
             {{-- KONTAK DAN LOKASI --}}
-            <div class="d-flex flex-row justify-content-between">
+            <div class="d-flex flex-md-row flex-column gap-4 justify-content-between">
                 {{-- KONTAK --}}
                 <div class="d-flex flex-column gap-4">
                     <p class="fw-bold mb-0">Kontak dan Media Sosial</p>
@@ -154,7 +154,7 @@
                             <path
                                 d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                         </svg>
-                        <p>Jl. Dermojoso no.123 Ds. Loughtown Kec. GrandLane Kab. East Blue</p>
+                        <p style="width: 400px;">Jl. Dermojoso no.123 Ds. Loughtown Kec. GrandLane Kab. East Blue</p>
                     </div>
                 </div>
             </div>

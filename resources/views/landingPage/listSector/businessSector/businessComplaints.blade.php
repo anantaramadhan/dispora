@@ -51,9 +51,9 @@
     <section id="detailUsahaHead"
         class="container-xxl d-flex flex-column align-items-center gap-4 rounded-2 overflow-hidden mt-4 p-4">
 
-        <h2 class="fw-bold">Pengaduan Usaha</h2>
+        <h2 class="fw-bold boxSectorUp">Pengaduan Usaha</h2>
 
-        <svg class="w-25 h-auto text-gray-800 dark:text-white" aria-hidden="true" width="" height=""
+        <svg class="w-25 h-auto text-gray-800 dark:text-white boxSectorUp" aria-hidden="true" width="" height=""
             viewBox="0 0 406 594" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M28 413.554C28 412.143 29.6723 411 31.7352 411H372.265C374.328 411 376 412.143 376 413.554V571.446C376 572.857 374.328 574 372.265 574H31.7352C29.6723 574 28 572.857 28 571.446V413.554Z"
@@ -265,20 +265,20 @@
 
         <div class="w-100 d-flex flex-column gap-4">
             {{-- PERIHAL --}}
-            <div class="w-100 d-flex flex-column justify-content-start gap-2  text-black">
+            <div class="w-100 d-flex flex-column justify-content-start gap-2  text-black boxSectorUp">
                 <h4 class="mb-0 fw-semibold">Perilah Pengaduan</h4>
                 <input class="rounded-pill py-2 px-4 border-1" placeholder="Perilah..." type="text">
             </div>
 
             {{-- DESKRIPSI --}}
-            <div class="w-100 d-flex flex-column gap-2  text-black">
+            <div class="w-100 d-flex flex-column gap-2  text-black boxSectorUp">
                 <h4 class="mb-0 fw-semibold text-black">Deskripsi Pengaduan</h4>
                 <textarea class="rounded-4 bg-transparent p-3" style="height: 140px" rows="4" maxlength="500"
                     placeholder="Isi disini ulasanmu...." type="text"></textarea>
             </div>
 
             {{-- FOTO --}}
-            <div class="w-100 d-flex flex-column gap-2 text-black">
+            <div class="w-100 d-flex flex-column gap-2 text-black boxSectorUp">
                 <h4 class="mb-0 fw-semibold ">Bukti Foto Pengaduan</h4>
 
                 <div id="preview" class="w-100 h-100 d-flex justify-content-center mb-4"></div>
@@ -304,7 +304,7 @@
             </div>
 
             {{-- BUTTON --}}
-            <div class="w-100 d-flex flex-column gap-2">
+            <div class="w-100 d-flex flex-column gap-2 boxSectorUp">
                 <a class="btn btn-primary rounded-pill d-flex flex-row align-items-center justify-content-center"
                     style="height: 44px;" onclick="showAlert()">Tambah Aduan</a>
                 <a class="btn btn-outline-dark rounded-pill d-flex flex-row align-items-center justify-content-center"

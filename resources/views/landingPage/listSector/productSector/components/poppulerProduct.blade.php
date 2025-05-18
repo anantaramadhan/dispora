@@ -1,5 +1,5 @@
-<div class="w-100">
-    <h2 class="fw-bold text-black">Produk Populer</h2>
+<div class="w-100 mt-4">
+    <h2 class="fw-bold text-black mb-0">Produk Populer</h2>
 
     <?php
     // data card bawah
@@ -124,7 +124,7 @@
 
     ?>
 
-    <div class="overflows d-flex flex-row gap-4 py-5 px-2">
+    <div class="overflows d-flex flex-row gap-4 py-4 px-2">
         {{-- CARD USAHA --}}
         <?php foreach ($dataUsahaPopuler as $item): ?>
         <div class="shadow rounded-4 zoom-card boxSector">
