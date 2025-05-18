@@ -115,6 +115,7 @@ Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::cla
 
 Route::get('/entrepreneur/product', [EntrepreneurProductController::class, 'index'])->name('entrepreneur-product');
 Route::get('/entrepreneur/product/show/{id}', [EntrepreneurProductController::class, 'show'])->name('entrepreneur-product-show');
+Route::get('/entrepreneur/product/form', [EntrepreneurProductController::class, 'form'])->name('entrepreneur-product-form');
 Route::post('/entrepreneur/product', [EntrepreneurProductController::class, 'store'])->name('entrepreneur-product-store');
 Route::put('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'update'])->name('entrepreneur-product-update');
 Route::delete('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'destroy'])->name('entrepreneur-product-destroy');
