@@ -9,6 +9,8 @@
     }
 </style>
 
+<script src="{{asset('assets/css/custom.css')}}"></script>
+
 
 <body class="d-flex flex-column bg-white min-vh-screen justify-content-between">
     @include('landingPage.layouts.header')
@@ -27,11 +29,47 @@
 
 
     {{-- Section Event dan Artikel --}}
-    @include('landingPage.home.components.infromation')
+    @include('landingPage.home.components.information.infromation')
 
     @include('landingPage.layouts.footer')
 
     <script src="{{ asset('assets/js/animate.js') }}"></script>
+    <script src="{{asset('assets/js/informationLandingPage.js')}}"></script>
+
+    <script>
+        document.querySelectorAll(".btn-detail").forEach(button => {
+            button.addEventListener("click", function(e) {
+                e.preventDefault();
+
+                // Ambil data dari tombol
+                const title = this.dataset.title;
+                const description = this.dataset.description;
+                const image = this.dataset.image;
+
+                // Isi ke modal
+                document.getElementById("modalTitle").textContent = title;
+                document.getElementById("modalDescription").textContent = description;
+                document.getElementById("modalImage").src = image;
+
+                // Jika subsektor link ingin dinamis:
+                // const subLink = `/subsektor/${encodeURIComponent(title.toLowerCase())}`;
+                // document.getElementById("subsektorBtn").href = subLink;
+
+                // Tampilkan modal
+                document.getElementById("popupModal").classList.remove("d-none");
+            });
+        });
+
+        // Tutup modal
+        document.getElementById("closeModal").addEventListener("click", function() {
+            document.getElementById("popupModal").classList.add("d-none");
+        });
+
+        // Tombol silang (×)
+        document.querySelector(".close-btn").addEventListener("click", function() {
+            document.getElementById("popupModal").classList.add("d-none");
+        });
+    </script>
 
 </body>
 

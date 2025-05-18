@@ -1,4 +1,4 @@
-<section
+<section id="aboutWeb"
     class="scroll-section container-xxl mt-5 d-flex flex-column flex-lg-row align-items-center overflow-hidden px-5 px-lg-0 py-5">
 
     {{-- div kiri --}}

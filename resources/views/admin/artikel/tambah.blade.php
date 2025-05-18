@@ -9,7 +9,6 @@
   @include('admin.layouts.sidebar')
 
   <main id="main" class="main">
-
     <!-- Page Title -->
     <div class="pagetitle mb-4">
       <h1>Tambah Artikel</h1>
@@ -18,36 +17,50 @@
     <!-- Form Tambah Artikel -->
     <div class="card">
       <div class="card-body">
-        <form method="POST" action="{{ route('artikel.tambah') }}" enctype="multipart/form-data" id="addArticleForm">
+        @if (session('success'))
+          <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+        <form method="POST" action="{{ route('artikel.store') }}" enctype="multipart/form-data">
           @csrf
-
           <!-- Judul Artikel -->
           <div class="mb-3">
             <label for="judul" class="form-label">Judul Artikel</label>
-            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul artikel" required>
+            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul artikel" value="{{ old('judul') }}" required>
           </div>
 
           <!-- Deskripsi -->
           <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" placeholder="Tulis deskripsi artikel..." required></textarea>
+            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" placeholder="Tulis deskripsi artikel..." required>{{ old('deskripsi') }}</textarea>
           </div>
 
-          <!-- Tanggal Dibuat -->
+          <!-- Tanggal Kadaluwarsa -->
           <div class="mb-3">
-            <label for="tanggal" class="form-label">Tanggal Dibuat</label>
-            <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+            <label for="tanggal" class="form-label">Tanggal Kadaluwarsa (Opsional)</label>
+            <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal') }}">
           </div>
 
           <!-- Upload Foto -->
           <div class="mb-3">
             <label for="foto" class="form-label">Upload Foto</label>
-            <input class="form-control" type="file" id="foto" name="foto" accept="image/*" required>
+            <input class="form-control" type="file" id="foto" name="foto" accept="image/*">
           </div>
 
           <!-- Tombol Aksi -->
           <div class="d-flex justify-content-between">
-            <div class="ms-auto">
+            <a href="{{ route('artikel') }}" class="btn btn-secondary">
+              <i class="bi bi-arrow-left"></i> Kembali
+            </a>
+            <div>
               <button type="reset" class="btn btn-danger me-2">
                 <i class="bi bi-x-circle"></i> Batal
               </button>
@@ -56,72 +69,10 @@
               </button>
             </div>
           </div>
-
         </form>
       </div>
     </div>
-
   </main>
-
-  <!-- Modal Berhasil Tambah Artikel -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="successModalLabel">Berhasil Menambah Artikel</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Artikel Anda berhasil ditambahkan.
-        </div>
-        <div class="modal-footer">
-          <a href="{{ route('artikel') }}" class="btn btn-success">Kembali ke Daftar Artikel</a>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Gagal Menambah Artikel -->
-  <div class="modal fade" id="failureModal" tabindex="-1" aria-labelledby="failureModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="failureModalLabel">Gagal Menambah Artikel</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Terjadi kesalahan saat menambah artikel. Silakan coba lagi.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Script untuk Modal -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // Menangani form submission
-    document.getElementById("addArticleForm").onsubmit = function (event) {
-      event.preventDefault();
-
-      // Simulasikan proses penyimpanan dengan random (gantilah dengan proses sebenarnya)
-      let success = Math.random() > 0.5;  // Randomly simulate success or failure
-
-      if (success) {
-        // Menampilkan modal Berhasil Menambah Artikel
-        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show();
-      } else {
-        // Menampilkan modal Gagal Menambah Artikel
-        var failureModal = new bootstrap.Modal(document.getElementById('failureModal'));
-        failureModal.show();
-      }
-    };
-  </script>
 
 </body>
 

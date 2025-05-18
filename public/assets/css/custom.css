@@ -66,7 +66,7 @@ h1 {
     height: auto;
     z-index: 2;
     top: 40%;
-    left: 62%;
+    left: 55%;
 }
 
 .font {
@@ -144,4 +144,65 @@ h1 {
     outline: none !important;
     box-shadow: none !important;
     border-color: #ced4da !important; /* default border color Bootstrap */
+}
+
+.form-control::placeholder {
+    color: rgb(182, 182, 182);
+    opacity: 1;
+}
+
+/* popup home */
+.popup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    max-width: 50%;
+    width: 90%;
+}
+
+.d-none {
+    display: none;
+}
+
+/* show and hide 2 section with button */
+.fade-section {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.fade-section.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.my-confirm-button {
+    background-color: #265780; /* Tailwind: green-500 */
+    color: white;
+    padding: 8px 200px;
+    border-radius: 1000px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.my-confirm-button:hover{
+    background-color: #0C3555;
+}
+
+.my-confirm-button:active{
+    background-color: #001C32;
 }

@@ -2,6 +2,8 @@
 
 return [
 
+    'backend_api' => env('BACKEND_URL', 'http://127.0.0.1:8000'),
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -11,7 +13,7 @@ return [
     | as Mailgun, Postmark, AWS and more. This file provides the de facto
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
-    |
+
     */
 
     'postmark' => [

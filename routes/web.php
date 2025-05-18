@@ -14,37 +14,51 @@ use App\Http\Controllers\Admin\DataEventController;
 use App\Http\Controllers\Admin\TerimaUsahaController;
 use App\Http\Controllers\Admin\DataUsahaController;
 use App\Http\Controllers\Admin\ProfilAdminController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\GoogleLoginController;
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\UsahaController;
+use App\Http\Controllers\Admin\SektorController;
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\Pengusaha\ProfilController;
 use App\Http\Controllers\LandingPage\AboutController;
+use App\Http\Controllers\LandingPage\GraphController;
+use App\Http\Controllers\Pengusaha\BerandaController;
+use App\Http\Controllers\LandingPage\SectorController;
 use App\Http\Controllers\LandingPage\ArticelController;
 use App\Http\Controllers\LandingPage\HomeEventController;
-use App\Http\Controllers\LandingPage\GraphController;
-use App\Http\Controllers\LandingPage\SectorController;
+use App\Http\Controllers\Pengusaha\ProdukUsahaController;
+use App\Http\Controllers\Pengusaha\InformasiUsahaController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurEventController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurGaleryController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
+
+Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
+Route::get('/auth/callback/google', [GoogleLoginController::class, 'handleGoogleCallback']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
 // Route login
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-
-//Route daftar
+// Route daftar
 Route::get('register', [RegisterController::class, 'showRegisterForm'])->name('register');
 
-
-//route lupa sandi 
+// Route lupa sandi
 Route::get('lupasandi', [LupaSandiController::class, 'showLoginForm'])->name('lupasandi');
-
-
-
-
 
 // Route Beranda
 Route::get('admin/beranda', [BerandaAdminController::class, 'index'])->name('admin.beranda');
 
 // Route Artikel
-Route::get('admin/artikel', [ArtikelController::class, 'index'])->name('artikel');
-Route::get('admin/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
-Route::get('admin/artikel/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
+Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('artikel.tambah');
+Route::get('/artikel/edit/{id}', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::post('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
 
 // Route Terima Event
 Route::get('admin/terimaevent', [TerimaEventController::class, 'index'])->name('terimaevent');
@@ -71,66 +85,23 @@ Route::get('admin/datasektor/info', [DataSektorController::class, 'info'])->name
 // Route Profil
 Route::get('admin/profil', [ProfilAdminController::class, 'index'])->name('admin.profil');
 
-
-//Route Pop Up
+// Route Pop Up
 Route::get('admin/error', [PopUpController::class, 'error'])->name('popup.404');
 
-
-
-
-
-
 // ROUTE UNTUK PENGUSAHA
-use App\Http\Controllers\Pengusaha\InformasiUsahaController;
-use App\Http\Controllers\Pengusaha\EventmuController;
-use App\Http\Controllers\Pengusaha\ProdukUsahaController;
-use App\Http\Controllers\Pengusaha\ProfilController;
-use App\Http\Controllers\Pengusaha\BerandaController;
-use App\Http\Controllers\Pengusaha\AuthController;
+Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
 
+// Route for other entrepreneur routes (events, business, products, etc.)
 
-
-
-//ROUTE AUTH
-Route::get('/pengusaha/masuk', [AuthController::class, 'showmasuk'])->name('masuk');
-Route::get('/pengusaha/daftar', [AuthController::class, 'showdaftar'])->name('daftar');
-
-// ROUTE BERANDA
-Route::get('/pengusaha/beranda', [BerandaController::class, 'index'])->name('beranda');
-
-
-// ROUTE EVENTMU
-Route::get('/pengusaha/eventmu', [EventmuController::class, 'index'])->name('eventmu');
-Route::get('/pengusaha/eventmu/edit', [EventmuController::class, 'edit'])->name('eventmu.edit');
-Route::get('/pengusaha/eventmu/tambah', [EventmuController::class, 'tambah'])->name('eventmu.tambah');
-
-
-// ROUTE INFORMASI USAHA
-Route::get('/pengusaha/informasiusaha', [InformasiUsahaController::class, 'index'])->name('informasiusaha');
-Route::get('/pengusaha/informasiusaha/edit', [InformasiUsahaController::class, 'edit'])->name('pengusaha.edit');
-
-
-// ROUTE PRODUK USAHA
-Route::get('/pengusaha/produkusaha', [ProdukUsahaController::class, 'index'])->name('produkusaha');
-Route::get('/pengusaha/produkusaha/edit', [ProdukUsahaController::class, 'edit'])->name('produk.edit');
-Route::get('/pengusaha/produkusaha/tambah', [ProdukUsahaController::class, 'tambah'])->name('produk.tambah');
-
-
-//ROUTE PROFIL
-Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profil');
-
-
-
-
-//route home landing oage
-Route::get('/', [HomeController::class, 'index'])->name(name: 'home');
-//Route about landing page
-Route::get('/landingPage/tentang', [AboutController::class, 'index'])->name('about');
-//Route sector landing page
-Route::get('/landingPage/sektor', [SectorController::class, 'index'])->name('sector');
-//Route articel landing page
-Route::get('/landingPage/artikel', [ArticelController::class, 'index'])->name('articel');
-//Route event landing page
-Route::get('/landingPage/event', action: [HomeEventController::class, 'index'])->name('event');
-//Route infografis landing page
-Route::get('/landingPage/infografis', action: [GraphController::class, 'index'])->name('graph');
+// Route landing Page
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/tentang', [AboutController::class, 'index'])->name('about');
+Route::get('/sektor', [SectorController::class, 'index'])->name('sector');
+Route::get('/sektor/product/detailProduk', [SectorController::class, 'detailProduct'])->name('detailProduct');
+Route::get('/sektor/product/detailbussines', [SectorController::class, 'detailBussines'])->name('detailbussines');
+Route::get('/sektor/product/aduanbussines', [SectorController::class, 'businessComplaints'])->name('businessComplaints');
+Route::get('/artikel', [ArticelController::class, 'index'])->name('articel');
+Route::get('/artikel/detailArticel', [ArticelController::class, 'detailarticel'])->name('detailArticel');
+Route::get('/event', [HomeEventController::class, 'index'])->name('event');
+Route::get('/event/detailEvent', [HomeEventController::class, 'detail'])->name('detailEvent');
+Route::get('/infografis', [GraphController::class, 'index'])->name('graph');

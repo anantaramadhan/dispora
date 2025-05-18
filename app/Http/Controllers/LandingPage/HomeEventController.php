@@ -13,5 +13,9 @@ class HomeEventController extends Controller
         return view('landingPage.event.index');
     }
 
-
+    public function detail()
+    {
+        // Kembalikan tampilan untuk form info usaha
+        return view('landingPage.event.detailEvent');
+    }
 }
