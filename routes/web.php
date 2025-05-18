@@ -15,15 +15,18 @@ use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\Pengusaha\ProfilController;
 use App\Http\Controllers\LandingPage\AboutController;
 use App\Http\Controllers\LandingPage\GraphController;
-
 use App\Http\Controllers\Pengusaha\BerandaController;
-use App\Http\Controllers\Pengusaha\EventmuController;
+
 use App\Http\Controllers\LandingPage\SectorController;
 use App\Http\Controllers\LandingPage\ArticelController;
 use App\Http\Controllers\LandingPage\HomeEventController;
 use App\Http\Controllers\Pengusaha\ProdukUsahaController;
 use App\Http\Controllers\Pengusaha\InformasiUsahaController;
-
+// use App\Http\Controllers\Pengusaha\EntrepreneurEventController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurEventController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurGaleryController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
 
 Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
 Route::get('/auth/callback/google', [GoogleLoginController::class, 'handleGoogleCallback']);
@@ -92,33 +95,61 @@ Route::get('admin/profil', [FrontendController::class, 'profil'])->name('admin.p
 
 
 //ROUTE AUTH
-Route::get('/pengusaha/masuk', [AuthController::class, 'showmasuk'])->name('masuk');
-Route::get('/pengusaha/daftar', [AuthController::class, 'showdaftar'])->name('daftar');
+// Route::get('/pengusaha/masuk', [AuthController::class, 'showmasuk'])->name('masuk');
+// Route::get('/pengusaha/daftar', [AuthController::class, 'showdaftar'])->name('daftar');
 
 // ROUTE BERANDA
-Route::get('/pengusaha', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
+
+Route::get('/entrepreneur/event', [EntrepreneurEventController::class, 'index'])->name('entrepreneur-event');
+Route::get('/entrepreneur/event/form', [EntrepreneurEventController::class, 'form'])->name('entrepreneur-event-form');
+Route::get('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'show'])->name('entrepreneur-event-show');
+Route::post('/entrepreneur/event/edit', [EntrepreneurEventController::class, 'store'])->name('entrepreneur-event-post');
+Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'update'])->name('entrepreneur-event-put');
+Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
+
+Route::get('/entrepreneur/business', [EntrepreneurBusinessController::class, 'index'])->name('entrepreneur-business');
+Route::get('/entrepreneur/business/show', [EntrepreneurBusinessController::class, 'show'])->name('entrepreneur-business-show');
+Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurBusinessController::class, 'update'])->name('entrepreneur-event-put');
+Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
+
+Route::get('/entrepreneur/product', [EntrepreneurProductController::class, 'index'])->name('entrepreneur-product');
+Route::get('/entrepreneur/product/show/{id}', [EntrepreneurProductController::class, 'show'])->name('entrepreneur-product-show');
+Route::post('/entrepreneur/product', [EntrepreneurProductController::class, 'store'])->name('entrepreneur-product-store');
+Route::put('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'update'])->name('entrepreneur-product-update');
+Route::delete('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'destroy'])->name('entrepreneur-product-destroy');
+
+Route::get('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'index'])->name('entrepreneur-galery');
+Route::get('/entrepreneur/galery/show/{id}', [EntrepreneurGaleryController::class, 'show'])->name('entrepreneur-galery-show');
+Route::post('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'store'])->name('entrepreneur-galery-store');
+Route::put('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'update'])->name('entrepreneur-galery-update');
+Route::delete('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'destroy'])->name('entrepreneur-galery-destroy');
+
+
+
+Route::get('/entrepreneur/profile', [ProfilController::class, 'index'])->name('entrepreneur-profile');
 
 
 // ROUTE EVENTMU
-Route::get('/pengusaha/eventmu', [EventmuController::class, 'index'])->name('eventmu');
-Route::get('/pengusaha/eventmu/edit', [EventmuController::class, 'edit'])->name('eventmu.edit');
-Route::get('/pengusaha/eventmu/tambah', [EventmuController::class, 'tambah'])->name('eventmu.tambah');
+
+Route::get('/pengusaha/eventmu/edit', [EntrepreneurEventController::class, 'edit'])->name('eventmu.edit');
+Route::get('/pengusaha/eventmu/tambah', [EntrepreneurEventController::class, 'tambah'])->name('eventmu.tambah');
 
 
 // ROUTE INFORMASI USAHA
-Route::get('/pengusaha/informasiusaha', [InformasiUsahaController::class, 'index'])->name('informasiusaha');
+
 Route::get('/pengusaha/informasiusaha/edit', [InformasiUsahaController::class, 'edit'])->name('pengusaha.edit');
 
 
 // ROUTE PRODUK USAHA
-Route::get('/pengusaha/produkusaha', [ProdukUsahaController::class, 'index'])->name('produkusaha');
+
 Route::get('/pengusaha/produkusaha/edit', [ProdukUsahaController::class, 'edit'])->name('produk.edit');
 Route::get('/pengusaha/produkusaha/tambah', [ProdukUsahaController::class, 'tambah'])->name('produk.tambah');
 
 
 
 //ROUTE PROFIL
-Route::get('/pengusaha/profil', [ProfilController::class, 'index'])->name('profil');
+
 
 
 
