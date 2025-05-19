@@ -10,7 +10,7 @@
 </style>
 
 
-<body>
+<body class="bg-white">
 
     @include('landingPage.layouts.header')
 

@@ -35,3 +35,7 @@ document.querySelectorAll(".switch-section").forEach(function (item) {
         dropdownBtn.textContent = target === "Product" ? "Produk" : "Usaha";
     });
 });
+
+function hapusInput(id) {
+    document.getElementById(id).value = "";
+}

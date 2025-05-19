@@ -510,17 +510,17 @@
 
     <section class="py-5 px-4 boxSectorUp" style="background-color: #D2DAF1">
         <div class="container-xxl d-flex flex-row justify-content-between">
-            <div class="d-flex flex-column gap-4 w-100">
+            <form action="" class="d-flex flex-column gap-4 w-100">
                 <h1 class="fw-bold mb-4">Tambahkan </br> Ulasanmu!!</h1>
                 <div class="d-flex flex-column gap-4">
-                    <textarea class="rounded-4 bg-transparent text-black p-3" style="height: 140px" rows="4" maxlength="500"
+                    <textarea id="nama" class="rounded-4 bg-transparent text-black p-3" style="height: 140px" rows="4" maxlength="500"
                         placeholder="Isi disini ulasanmu...." type="text"></textarea>
                     <div class="d-flex flex-column gap-2">
                         <a class="btn btn-primary text-white rounded-pill" href="">Tambah Ulasan</a>
-                        <a class="btn btn-outline-dark rounded-pill" href="">Batal</a>
+                        <a class="btn btn-outline-dark rounded-pill" onclick="hapusInput('nama')">Batal</a>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <svg class="w-100 max-w-[16rem] h-40 text-gray-800 dark:text-white d-md-flex d-none" aria-hidden="true"
                 width="556" height="421" viewBox="0 0 556 421" fill="none"

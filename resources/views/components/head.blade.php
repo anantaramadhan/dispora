@@ -7,8 +7,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicon -->
-    <link href="{{ asset('assets/img/iconEkraf.svg') }}" rel="icon">
-    <link href="{{ asset('assets/img/iconEkraf.svg') }}" rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/logoEkrafWhite.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/logoEkrafWhite.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">

@@ -22,9 +22,9 @@
 
         <div class="py-2 w-100 d-flex flex-row justify-content-between">
             {{-- name website --}}
-            <div class="d-flex align-items-center">
-                <img src="{{ asset('assets/img/iconEkraf.svg') }}" alt="" class="nav-logo">
-                <p class="fw-bold fs-6 mb-0 ps-2">Nganjuk<span class="fw-semibold">.Ekraf</span></p>
+            <div class="d-flex align-items-center gap-2">
+                <img src="{{ asset('assets/img/logoEkrafTerbaru.png') }}" alt="" class="nav-logo">
+                <p class="fw-bold fs-5 mb-0 ps-2">Ekraf<span class="fw-medium">Kuy</span></p>
             </div>
 
             <div class="d-flex flex-row align-items-center ">

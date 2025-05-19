@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         scrollTrigger: {
             trigger: ".boxSector", // animasi dimulai saat container masuk viewport
             start: "top 80%",
-            toggleActions: "play none none none",
-            once: true,
+            toggleActions: "play none none reset",
+            // once: true,
         },
         y: -100,
         opacity: 0,

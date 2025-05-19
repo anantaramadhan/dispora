@@ -206,3 +206,12 @@ h1 {
 .my-confirm-button:active{
     background-color: #001C32;
 }
+
+.glass-card {
+      background: rgba(0, 0, 0, 0.3);             /* Hitam transparan */
+      backdrop-filter: blur(12px);                /* Efek blur */
+      -webkit-backdrop-filter: blur(12px);        /* Safari support */
+      border: 1px solid rgba(255, 255, 255, 0.1);  /* Border halus */
+      border-radius: 16px;
+      color: white;
+    }

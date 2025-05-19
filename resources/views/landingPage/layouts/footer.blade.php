@@ -14,9 +14,9 @@
 
         {{-- brand Web --}}
         <div class="col mb-5 mb-lg-5">
-            <div class="d-flex align-items-center justify-content-center justify-content-md-start">
-                <img src="{{ asset('assets/img/iconEkraf.svg') }}" alt="" class="footer-logo">
-                <p class="fw-bold fs-2 mb-0 ps-2">Nganjuk<span class="fw-medium">.Ekraf</span></p>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                <img src="{{ asset('assets/img/logoEkrafTerbaru.png') }}" alt="" class="footer-logo">
+                <p class="fw-bold fs-2 mb-0 ps-2">Ekraf<span class="fw-medium">Kuy</span></p>
             </div>
         </div>
 

@@ -7,13 +7,40 @@
     body {
         padding-top: 73px;
     }
+
+    #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #main-content {
+        opacity: 0;
+    }
 </style>
 
-<script src="{{asset('assets/css/custom.css')}}"></script>
+<script src="{{ asset('assets/css/custom.css') }}"></script>
 
 
 <body class="d-flex flex-column bg-white min-vh-screen justify-content-between">
     @include('landingPage.layouts.header')
+
+    {{-- spalsh screen --}}
+    <section id="splash-screen">
+        <div class="d-flex flex-row gap-4 align-items-center">
+            <img class="splash-logo" src="{{ asset('assets/img/logoEkrafTerbaru.png') }}" alt="Logo" width="60">
+            <p class="fw-bold mb-0 fs-1 splash-name">Ekraf<span class="fw-medium">Kuy</p>
+        </div>
+        <p class="py-4 splash-describe">Platfrom Ekonomi Kreatif Kabupaten Nganjuk</p>
+    </section>
 
     {{-- section ajakan --}}
     @include('landingPage.home.components.invit')
@@ -34,7 +61,7 @@
     @include('landingPage.layouts.footer')
 
     <script src="{{ asset('assets/js/animate.js') }}"></script>
-    <script src="{{asset('assets/js/informationLandingPage.js')}}"></script>
+    <script src="{{ asset('assets/js/informationLandingPage.js') }}"></script>
 
     <script>
         document.querySelectorAll(".btn-detail").forEach(button => {

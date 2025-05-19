@@ -263,7 +263,7 @@
             </defs>
         </svg>
 
-        <div class="w-100 d-flex flex-column gap-4">
+        <form action="" class="w-100 d-flex flex-column gap-4">
             {{-- PERIHAL --}}
             <div class="w-100 d-flex flex-column justify-content-start gap-2  text-black boxSectorUp">
                 <h4 class="mb-0 fw-semibold">Perilah Pengaduan</h4>
@@ -310,7 +310,7 @@
                 <a class="btn btn-outline-dark rounded-pill d-flex flex-row align-items-center justify-content-center"
                     style="height: 44px;" href="{{ route('detailbussines') }}">Batal</a>
             </div>
-        </div>
+        </form>
 
 
     </section>

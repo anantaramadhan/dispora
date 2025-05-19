@@ -4,7 +4,7 @@
         {{-- judul dan deskripsi section 1 --}}
         <h1 class="fw-bold d-flex flex-column" style="color: #011E34;">TEMUKAN <span
                 style="color: #407AA2;">KEBUTUHAN</span> KREATIFMU</h1>
-        <p>Selamat datang di Nganjuk.Ekraf, jendela menuju kekayaan kreativitas Kabupaten Nganjuk! Temukan beragam
+        <p>Selamat datang di EkrafKuy, jendela menuju kekayaan kreativitas Kabupaten Nganjuk! Temukan beragam
             produk unik dan inovatif dari para pelaku ekonomi kreatif lokal, mulai dari kerajinan tangan yang
             memukau hingga kuliner lezat yang menggugah selera. Mari dukung karya anak bangsa dan jadilah bagian
             dari geliat ekonomi kreatif Nganjuk. Jelajahi sekarang dan temukan inspirasi baru!</p>
