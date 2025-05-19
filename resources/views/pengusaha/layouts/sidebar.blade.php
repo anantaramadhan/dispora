@@ -13,7 +13,7 @@
 
         <!-- Menu Eventmu -->
         <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/eventmu','pengusaha/eventmu/tambah','pengusaha/eventmu/edit')) active @else collapsed @endif" href="{{ route('eventmu') }}">
+            <a class="nav-link @if (Request::is('pengusaha/eventmu', 'pengusaha/eventmu/tambah', 'pengusaha/eventmu/edit')) active @else collapsed @endif" href="{{ route('eventmu') }}">
                 <i class="bi bi-calendar-event"></i>
                 <span>Eventmu</span>
             </a>
@@ -21,7 +21,7 @@
 
         <!-- Menu Informasi Usaha -->
         <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/informasiusaha','pengusaha/informasiusaha/edit')) active @else collapsed @endif" href="{{ route('informasiusaha') }}">
+            <a class="nav-link @if (Request::is('pengusaha/informasiusaha', 'pengusaha/informasiusaha/edit')) active @else collapsed @endif" href="{{ route('informasiusaha') }}">
                 <i class="bi bi-shop"></i>
                 <span>Informasi usaha</span>
             </a>
@@ -29,11 +29,19 @@
 
         <!-- Menu Produk Usaha -->
         <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/produkusaha','pengusaha/produkusaha/tambah','pengusaha/produkusaha/edit')) active @else collapsed @endif" href="{{ route('produkusaha') }}">
+            <a class="nav-link @if (Request::is('pengusaha/produkusaha', 'pengusaha/produkusaha/tambah', 'pengusaha/produkusaha/edit')) active @else collapsed @endif" href="{{ route('produkusaha') }}">
                 <i class="bi bi-bag"></i>
                 <span>Produk Usahamu</span>
             </a>
         </li><!-- End Produk Usaha Nav -->
+
+        <!-- Menu Pengaduan -->
+        <li class="nav-item">
+            <a class="nav-link @if(Request::is('pengusaha/pengaduan')) active @else collapsed @endif" href="{{ route('pengaduan') }}">
+                <i class="bi bi-file-earmark-text"></i> <!-- Changed to report/document icon -->
+                <span>Pengaduan</span>
+            </a>
+        </li><!-- End Pengaduan Nav -->
 
         <!-- Menu Keluar -->
         <li class="nav-item">

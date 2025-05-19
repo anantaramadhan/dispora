@@ -122,6 +122,43 @@
             </div>
           </div><!-- End Row -->
 
+           <!-- Card Event -->
+            <div class="col-lg-4">
+              <div class="card info-card event-card">
+                <div class="card-body">
+                  <h5 class="card-title">Eventmu</h5>
+                  <!-- Event 1 -->
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid" style="height: 100px; width: 100px; object-fit: cover; border-radius: 10px;">
+                    <div class="ms-3">
+                      <h6>Event Judul 1</h6>
+                      <p class="text-muted small">Event ini akan membahas tentang inovasi produk dan pengembangan bisnis dalam industri digital.</p>
+                    </div>
+                  </div>
+
+                  <!-- Event 2 -->
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 2" class="img-fluid" style="height: 100px; width: 100px; object-fit: cover; border-radius: 10px;">
+                    <div class="ms-3">
+                      <h6>Event Judul 2</h6>
+                      <p class="text-muted small">Workshop untuk pemilik bisnis yang ingin memperdalam strategi pemasaran digital di media sosial.</p>
+                    </div>
+                  </div>
+
+                  <!-- Event 3 -->
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 3" class="img-fluid" style="height: 100px; width: 100px; object-fit: cover; border-radius: 10px;">
+                    <div class="ms-3">
+                      <h6>Event Judul 3</h6>
+                      <p class="text-muted small">Diskusi panel tentang tren pasar dan bagaimana memanfaatkan teknologi untuk pertumbuhan bisnis.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div><!-- End Row -->
+
         </div>
       </div>
     </div>

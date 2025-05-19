@@ -62,6 +62,14 @@
       </a>
     </li><!-- End Data Sektor Nav -->
 
+    <!-- Menu Informasi Pengaduan -->
+    <li class="nav-item">
+      <a class="nav-link @if(request()->is('admin/informasiaduan','admin/informasiaduan/detail')) active @else collapsed @endif" href="{{ route('informasiaduan') }}">
+        <i class="bi bi-exclamation-circle"></i>
+        <span>Informasi Pengaduan</span>
+      </a>
+    </li><!-- End Informasi Pengaduan Nav -->
+
     <!-- Menu Profil -->
     <li class="nav-item">
       <a class="nav-link @if(request()->is('admin/profil')) active @else collapsed @endif" href="{{ route('admin.profil') }}">
