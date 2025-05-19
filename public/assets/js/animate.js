@@ -43,6 +43,56 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stagger: 0.1, // Jeda antar elemen jika ada lebih dari satu
         ease: "power2.out",
     });
+
+    const hasVisited = sessionStorage.getItem("hasVisited");
+
+    const splash = document.getElementById("splash-screen");
+    const content = document.getElementById("main-content");
+
+    if (!hasVisited) {
+        // User pertama kali akses web
+        window.addEventListener("load", () => {
+            const tl = gsap.timeline();
+
+            tl.from(".splash-logo", {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out",
+            });
+
+            tl.from(".splash-name", {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.1,
+                ease: "power2.out",
+            });
+
+            tl.from(".splash-describe", {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                delay: 0.2,
+                ease: "power2.out",
+            });
+
+            tl.to(splash, {
+                opacity: 0,
+                duration: 1,
+                delay: 1.5,
+                onComplete: () => {
+                    splash.style.display = "none";
+                    gsap.to(content, { opacity: 1, duration: 1 });
+                    localStorage.setItem("hasVisited", "true"); // Simpan status
+                },
+            });
+        });
+    } else {
+        // Sudah pernah, langsung sembunyikan splash
+        splash.style.display = "none";
+        document.body.classList.add("splash-hidden");
+    }
 });
 
 // ZOOM CARD 0.5
