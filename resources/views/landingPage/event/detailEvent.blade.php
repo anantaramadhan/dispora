@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-@include('components.head')
+@include('components.head2')
 
 <style>
     body {
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="p-4">
-                    <a class="text-black" href="{{ route('detailEvent') }}">
+                    <a class="text-black text-decoration-none" href="{{ route('detailEvent') }}">
                         <h3 class="fw-bold"><?= potong_judul($item['title']) ?></h3>
                     </a>
 
@@ -248,7 +248,7 @@
                             <p class="m-0 fw-semibold"><?= $item['tanggal'] ?></p>
                             <p class="m-0 fw-semibold"><?= $item['waktu'] ?></p>
                         </div>
-                        <a href="">Selengkapnya ></a>
+                        <a class="text-black text-decoration-none" href="{{route('detailEvent')}}">Selengkapnya ></a>
                     </div>
                 </div>
             </div>

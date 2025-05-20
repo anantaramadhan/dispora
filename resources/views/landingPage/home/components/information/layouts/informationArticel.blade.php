@@ -15,7 +15,7 @@
                     <p class="m-0 fw-semibold text">Sumber</p>
                     <div class="d-flex flex-row w-100 justify-content-between">
                         <p class="m-0">Tanggal</p>
-                        <a href="{{ route('detailArticel') }}">Selengkapnya > </a>
+                        <a class="text-black text-decoration-none" href="{{ route('detailArticel') }}">Selengkapnya > </a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <p class="m-0 fw-semibold text">Sumber</p>
                     <div class="d-flex flex-row w-100 justify-content-between">
                         <p class="m-0">Tanggal</p>
-                        <a href="{{ route('detailArticel') }}">Selengkapnya > </a>
+                        <a class="text-black text-decoration-none" href="{{ route('detailArticel') }}">Selengkapnya > </a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <p class="m-0 fw-semibold text">Sumber</p>
                     <div class="d-flex flex-row w-100 justify-content-between">
                         <p class="m-0">Tanggal</p>
-                        <a href="{{ route('detailArticel') }}">Selengkapnya > </a>
+                        <a class="text-black text-decoration-none" href="{{ route('detailArticel') }}">Selengkapnya > </a>
                     </div>
                 </div>
             </div>

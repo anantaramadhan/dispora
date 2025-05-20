@@ -158,7 +158,7 @@
                             <p class=""><?= potong_kata($item['description']) ?></p>
 
                             <div class="w-100 d-flex justify-content-end">
-                                <a href="" class="btn-detail"
+                                <a href="" class="btn-detail text-black text-decoration-none"
                                     data-title="<?= htmlspecialchars($item['title']) ?>"
                                     data-description="<?= htmlspecialchars($item['description']) ?>"
                                     data-image="{{ asset($item['ilustration']) }}">
@@ -185,7 +185,7 @@
                             <p class=""><?= potong_kata($item2['description']) ?></p>
 
                             <div class="w-100 d-flex justify-content-end">
-                                <a href="" class="btn-detail"
+                                <a href="" class="btn-detail text-black text-decoration-none"
                                     data-title="<?= htmlspecialchars($item2['title']) ?>"
                                     data-description="<?= htmlspecialchars($item2['description']) ?>"
                                     data-image="{{ asset($item2['ilustration']) }}">

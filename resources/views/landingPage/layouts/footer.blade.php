@@ -25,7 +25,7 @@
             <p class="fs-2 fw-bold ">Media Sosial</p>
 
             {{-- telepon --}}
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center gap-2">
                 <svg class="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,12 +33,12 @@
                 </svg>
 
 
-                <a href="https://wa.me/6289635650887" target="_blank"
+                <a class="text-decoration-none text-black fs-4 fw-semibold" href="https://wa.me/6289635650887" target="_blank"
                     class="text-black ms-2 fs-5 fw-semibold p-2">089635650887</a>
             </div>
 
             {{-- Instagram --}}
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center gap-2">
                 <svg class="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
                     <path fill="currentColor" fill-rule="evenodd"
@@ -47,12 +47,12 @@
                 </svg>
 
 
-                <a href="https://www.instagram.com/nganjuk.creativehub/" target="_blank"
+                <a class="text-decoration-none text-black fs-4 fw-semibold" href="https://www.instagram.com/nganjuk.creativehub/" target="_blank"
                     class="text-black ms-2 fs-5 fw-semibold p-2">nganjuk.creativehub</a>
             </div>
 
             {{-- Tiktok --}}
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center gap-2">
                 <svg class="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     viewBox="0 0 24 24">
@@ -61,7 +61,7 @@
                         clip-rule="evenodd" />
                 </svg>
 
-                <a href="https://www.facebook.com/profile.php?id=100083112380116" target="_blank"
+                <a class="text-decoration-none text-black fs-4 fw-semibold" href="https://www.facebook.com/profile.php?id=100083112380116" target="_blank"
                     class="text-black ms-2 fs-5 fw-semibold p-2">Nganjuk Creative Hub</a>
             </div>
 
@@ -114,17 +114,18 @@
 </footer>
 
 <!-- Vendor JS Files -->
-<script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
 <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/quill/quill.js') }}"></script>
 <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
 <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script> --}}
 
 <!-- Template Main JS File -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/main.js') }}"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 {{-- animation gsap --}}

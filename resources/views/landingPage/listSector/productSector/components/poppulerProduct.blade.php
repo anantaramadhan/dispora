@@ -134,7 +134,7 @@
 
             <div class="p-3 text-black">
                 {{-- TITLE --}}
-                <a href="{{route('detailProduct')}}" class="text-black">
+                <a href="{{route('detailProduct')}}" class="text-black text-decoration-none">
                     <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
                 </a>
 

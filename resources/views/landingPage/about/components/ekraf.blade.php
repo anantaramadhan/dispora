@@ -1,8 +1,8 @@
 {{-- section penjelasan nganjuk.ekraf --}}
 <section class="container-xxl d-flex flex-lg-row flex-column w-100 justify-content-center align-items-center py-4">
     <div class="d-flex position-relative justify-content-center w-100 ">
-        <img src="{{ asset('assets/img/logoEkrafWhite.png') }}" alt="" style="width: 500px" class="py-5">
-        <div class="backgorundCircle2"></div>
+        <img src="{{ asset('assets/img/logoEkrafTerbaru.png') }}" alt="" style="width: 300px" class="py-5">
+        {{-- <div class="backgorundCircle2"></div> --}}
     </div>
 
     <div class="w-100">

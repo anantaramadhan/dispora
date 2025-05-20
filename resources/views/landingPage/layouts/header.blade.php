@@ -31,20 +31,20 @@
                 {{-- list --}}
                 <ul class="navbar-nav ms-auto d-flex flex-row align-items-center d-none d-lg-flex">
                     <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link fw-medium fs-6 text-black mx-4">Beranda</a>
+                        <a href="{{ route('home') }}" class="nav-link mx-4">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('about') }}" class="nav-link fw-medium fs-6 text-black mx-4">Tentang</a>
+                        <a href="{{ route('about') }}" class="nav-link mx-4">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('graph') }}" class="nav-link fw-medium fs-6 text-black mx-4">Info Grafis</a>
+                        <a href="{{ route('graph') }}" class="nav-link mx-4">Info Grafis</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('sector') }}" class="nav-link fw-medium fs-6 text-black mx-4">Daftar
+                        <a href="{{ route('sector') }}" class="nav-link mx-4">Daftar
                             Subsektor</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fw-medium fs-6 text-black mx-4" href="#"
+                        <a class="nav-link dropdown-toggle mx-4" href="#"
                             id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Informasi
                         </a>
@@ -72,31 +72,31 @@
         </div>
         {{-- dropdown --}}
         <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav ms-auto d-flex justify-content-center align-items-start">
+            <ul class="navbar-nav">
                 <li class="nav-item w-fit hover:bg-amber-400">
                     <a href="{{ route('home') }}"
-                        class="nav-link {{ Request::is('beranda*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Beranda</a>
+                        class="nav-link {{ Request::is('beranda*') ? 'active' : 'collapsed' }}">Beranda</a>
                 </li>
                 <li class="nav-item w-fit hover:bg-amber-400">
                     <a href="{{ route('about') }}"
-                        class="nav-link {{ Request::is('tentang*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Tentang</a>
+                        class="nav-link {{ Request::is('tentang*') ? 'active' : 'collapsed' }}">Tentang</a>
                 </li>
                 <li class="nav-item w-fit hover:bg-amber-400">
                     <a href="{{ route('graph') }}"
-                        class="nav-link {{ Request::is('ingo-grafis*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Info
+                        class="nav-link {{ Request::is('ingo-grafis*') ? 'active' : 'collapsed' }}">Info
                         Grafis</a>
                 </li>
                 <li class="nav-item w-fit hover:bg-amber-400">
                     <a href="{{ route('sector') }}"
-                        class="nav-link {{ Request::is('subsektor*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Daftar
+                        class="nav-link {{ Request::is('subsektor*') ? 'active' : 'collapsed' }}">Daftar
                         Subsektor</a>
                 </li>
-                <li class="nav-item w-fit hover:bg-amber-400 dropdown">
-                    <a class="nav-link dropdown-toggle fw-semibold fs-6 text-black" href="#" id="navbarDropdown"
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Informasi
                     </a>
-                    <ul class="dropdown-menu position-absolute py-0 top-100" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('articel') }}">Artikel</a></li>
                         <li><a class="dropdown-item" href="{{ route('event') }}">Event</a></li>
                     </ul>

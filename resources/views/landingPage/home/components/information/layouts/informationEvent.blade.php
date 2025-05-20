@@ -9,7 +9,7 @@
                         <p class="m-0 fw-semibold">tanggal</p>
                         <p class="m-0 fw-semibold">Waktu</p>
                     </div>
-                    <a href="">Selengkapnya ></a>
+                    <a class="text-black text-decoration-none" href="">Selengkapnya ></a>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                         <p class="m-0 fw-semibold">tanggal</p>
                         <p class="m-0 fw-semibold">Waktu</p>
                     </div>
-                    <a href="">Selengkapnya ></a>
+                    <a class="text-black text-decoration-none" href="">Selengkapnya ></a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <p class="m-0 fw-semibold">tanggal</p>
                         <p class="m-0 fw-semibold">Waktu</p>
                     </div>
-                    <a href="">Selengkapnya ></a>
+                    <a class="text-black text-decoration-none" href="">Selengkapnya ></a>
                 </div>
             </div>
         </div>

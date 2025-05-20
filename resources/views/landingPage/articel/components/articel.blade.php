@@ -100,7 +100,7 @@
                         <p class="m-0 fw-semibold text"><?= $item['sumber'] ?></p>
                         <div class="d-flex flex-row w-100 justify-content-between">
                             <p class="m-0"><?= $item['tanggal'] ?></p>
-                            <a href="{{route('detailArticel')}}">Selengkapnya > </a>
+                            <a class="text-black text-decoration-none" href="{{route('detailArticel')}}">Selengkapnya > </a>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                         <p class="m-0 fw-semibold text"><?= $item['sumber'] ?></p>
                         <div class="d-flex flex-row w-100 justify-content-between">
                             <p class="m-0"><?= $item['tanggal'] ?></p>
-                            <a href="{{route('detailArticel')}}">Selengkapnya > </a>
+                            <a class="text-black text-decoration-none" href="{{route('detailArticel')}}">Selengkapnya > </a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                     <p class="m-0 fw-semibold text"><?= $item['sumber'] ?></p>
                     <div class="d-flex flex-row w-100 justify-content-between">
                         <p class="m-0"><?= $item['tanggal'] ?></p>
-                        <a href="{{route('detailArticel')}}">Selengkapnya > </a>
+                        <a class="text-black text-decoration-none" href="{{route('detailArticel')}}">Selengkapnya > </a>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('components.head')
+@include('components.head2')
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

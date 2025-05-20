@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // gsap code here!
 
     gsap.from(".box", {
-        scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
+        scrollTrigger: {
+            trigger: ".box",
+            toggleActions: "play none none reset"
+        }, // start the animation when ".box" enters the viewport (once)
         x: 100,
         opacity: 0,
         duration: 1.0,

@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-@include('components.head')
+@include('components.head2')
 
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -34,7 +34,7 @@
 <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
 
 
-<body class="overflow-x-hidden"
+<body class="overflow-x-hidden min-vh-100"
     style="background-image: url('https://images.unsplash.com/photo-1663942535328-4adb74bb0380?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover;">
     <?php
     
@@ -160,7 +160,7 @@
     
     ?>
 
-    <section class="w-100 h-100 d-flex flex-column align-items-center align-items-md-start">
+    <section class="container-xxl px-0 px-md-5 h-100 d-flex flex-column align-items-center">
         <div class="min-vw-100 p-4 d-flex justify-content-end">
             <div class="d-flex flex-row gap-2 align-items-center">
                 <img src="{{ asset('assets/img/logoEkrafWhite.png') }}" alt="" style="width: 40px;">
@@ -168,141 +168,159 @@
             </div>
         </div>
 
-        <form action="">
-            <div class="h-100 min-vw-100 py-4 d-flex flex-column align-items-center justify-content-center">
-
-                {{-- CARD NAMA USAHA --}}
-                <div id="card1"
-                    class=" text-white w-25 p-4 flex-column rounded-4 gap-5 glass-card cardSection active align-items-md-start">
-                    <div class="d-flex flex-column gap-2 align-items-center">
-                        <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
-                        <p class="text-center">Masukkan data dengan benar dan jika masih bingung terhadap sektor apa
-                            usaha
-                            anda, anda bisa
-                            menyakan langsung ke <a class="fw-semibold text-white text-decoration-underline"
-                                href="">Admin Ekonomi Kreatif</a></p>
-                    </div>
-
-                    <div class="d-flex flex-column gap-3">
-                        <div class="d-flex flex-column gap-2 w-100">
-                            <p class="fw-semibold mb-0">Nama Usaha</p>
-                            <input id="business-name" class="form-control rounded-pill border-0 py-2 px-4"
-                                placeholder="masukkan nama usaha disini..." type="text">
+        <form class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div id="card1"
+                        class="text-white p-4 flex-column rounded-4 gap-5 glass-card cardSection active align-items-md-start">
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
+                            <p class="text-center">Masukkan data dengan benar dan jika masih bingung terhadap sektor apa
+                                usaha
+                                anda, anda bisa
+                                menyakan langsung ke <a class="fw-semibold text-white text-decoration-underline"
+                                    href="">Admin Ekonomi Kreatif</a></p>
                         </div>
 
-                        <div class="d-flex flex-column gap-2 w-100">
-                            <p class="fw-semibold mb-0">Nama Pemilik</p>
-                            <input id="owner-name" class="form-control rounded-pill border-0 py-2 px-4"
-                                placeholder="masukkan nama usaha disini..." type="text">
-                        </div>
+                        <div class="d-flex flex-column gap-3 w-100">
+                            <div class="d-flex flex-column gap-2 w-100">
+                                <p class="fw-semibold mb-0">Nama Usaha</p>
+                                <input id="business-name" class="form-control rounded-pill border-0 py-2 px-4"
+                                    placeholder="masukkan nama usaha disini..." type="text">
+                            </div>
 
-                        <div class="d-flex flex-column gap-2 w-100">
-                            <p class="fw-semibold mb-0">Deskripsi Usaha</p>
-                            <textarea id="business-description" class="form-control rounded-4 border-0 py-2 px-4 overflow-hidden"
-                                style="height: 120px;" placeholder="masukkan nama usaha disini..." row="4" type="text"></textarea>
-                        </div>
+                            <div class="d-flex flex-column gap-2 w-100">
+                                <p class="fw-semibold mb-0">Nama Pemilik</p>
+                                <input id="owner-name" class="form-control rounded-pill border-0 py-2 px-4"
+                                    placeholder="masukkan nama usaha disini..." type="text">
+                            </div>
 
-                        <div class="d-flex flex-column gap-2 w-100">
-                            <p class="fw-semibold mb-0">Kategori Sektor Ekonomi Kreatif</p>
-                            <input id="sector-category" class="form-control rounded-pill py-2 px-4" list="daftarKota"
-                                id="pilihKota" placeholder="Ketik untuk memilih sektor...">
-                            <datalist id="daftarKota">
-                                <?php foreach ($data as $item):?>
-                                <option value="<?= $item['title'] ?>">
-                                    <?php endforeach; ?>
-                            </datalist>
-                        </div>
-                    </div>
+                            <div class="d-flex flex-column gap-2 w-100">
+                                <p class="fw-semibold mb-0">Deskripsi Usaha</p>
+                                <textarea id="business-description" class="form-control rounded-4 border-0 py-2 px-4 overflow-hidden"
+                                    style="height: 120px;" placeholder="masukkan nama usaha disini..." row="4" type="text"></textarea>
+                            </div>
 
-                    <div class="d-flex flex-column gap-4 w-100">
-                        <a onclick="tampilkanCard(2)" class="btn btn-primary rounded-pill px-4 py-2">Lanjut</a>
-                        <a href="{{ route('home') }}"
-                            class="w-100 d-flex flex-row justify-content-center text-white">Batal Daftar
-                            Usaha</a>
-                    </div>
-                </div>
-
-                {{-- CARD LOKASI --}}
-                <div id="card2" class=" text-white w-25 p-4 flex-column rounded-4 gap-5 glass-card cardSection">
-                    <div class="d-flex flex-column gap-2 align-items-center">
-                        <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
-                        <p class="text-center">Klik pada peta untuk menentukan titik koordinat lokasi usaha anda</p>
-                    </div>
-
-                    <div class="d-flex flex-column gap-3">
-
-                        <div class="d-flex flex-column gap-2 w-100">
-                            <p class="fw-semibold mb-0">Kategori Sektor Ekonomi Kreatif</p>
-                            <input type="text" id="koordinat" class="form-control mb-3 rounded-pill px-4 py-2"
-                                placeholder="Klik di peta untuk mendapatkan koordinat" readonly>
-
-                            <div id="map" class="rounded-4"></div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="d-flex flex-column gap-4 w-100">
-                        <a onclick="tampilkanCard(3)" class="btn btn-primary rounded-pill px-4 py-2">Lanjut</a>
-                        <a onclick="tampilkanCard(1)" class="btn btn-outline-light rounded-pill px-4 py-2">Kembali</a>
-                        <a href="{{ route('home') }}"
-                            class="w-100 d-flex flex-row justify-content-center text-white">Batal
-                            Daftar
-                            Usaha</a>
-                    </div>
-                </div>
-
-
-                {{-- CARD DATA TAMBAHAN --}}
-                <div id="card3" class=" text-white w-25 p-4 flex-column rounded-4 gap-5 glass-card cardSection">
-                    <div class="d-flex flex-column gap-2 align-items-center">
-                        <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
-                        <p class="text-center">Tambahkan Foto Usaha anda dalam bentuk Foto Produk, tempat, alat usaha,
-                            atau surat usaha</p>
-                    </div>
-
-                    <div class="d-flex flex-column gap-3">
-                        <div class="d-flex flex-column w-100">
-                            <p class="fw-semibold mb-0">Foto Bukti Usaha</p>
-
-                            <div id="preview" class="w-100 h-100 d-flex justify-content-center mb-4"></div>
-
-                            <div class="input-group rounded-pill border border-dark overflow-hidden">
-                                <!-- text‐box palsu tempat menampilkan nama file -->
-                                <input type="text" class="form-control border-0 ps-3" placeholder="nama file"
-                                    readonly>
-
-                                <!-- tombol/ikon unggah -->
-                                <label class="input-group-text border-0 pe-3 py-2" style="cursor:pointer;">
-                                    {{-- <i class="bi bi-upload text-primary fs-5"></i> --}}
-                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        fill="none" viewBox="0 0 24 24">
-                                        <path stroke="blue" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" />
-                                    </svg>
-
-                                    <input type="file" id="foto" class="d-none">
-                                </label>
+                            <div class="d-flex flex-column gap-2 w-100">
+                                <p class="fw-semibold mb-0">Kategori Sektor Ekonomi Kreatif</p>
+                                <input id="sector-category" class="form-control rounded-pill py-2 px-4"
+                                    list="daftarKota" id="pilihKota" placeholder="Ketik untuk memilih sektor...">
+                                <datalist id="daftarKota">
+                                    <?php foreach ($data as $item):?>
+                                    <option value="<?= $item['title'] ?>">
+                                        <?php endforeach; ?>
+                                </datalist>
                             </div>
                         </div>
 
-
+                        <div class="d-flex flex-column gap-4 w-100">
+                            <a onclick="tampilkanCard(2)" class="btn btn-primary rounded-pill px-4 py-2">Lanjut</a>
+                            <a href="{{ route('home') }}"
+                                class="w-100 d-flex flex-row justify-content-center text-white">Batal Daftar
+                                Usaha</a>
+                        </div>
                     </div>
 
-                    <div class="d-flex flex-column gap-4 w-100">
-                        <a href="{{ route('home') }}" class="btn btn-primary rounded-pill px-4 py-2">Ajukan Usaha</a>
-                        <a onclick="tampilkanCard(2)" class="btn btn-outline-light rounded-pill px-4 py-2">Kembali</a>
-                        <a href="{{ route('home') }}"
-                            class="w-100 d-flex flex-row justify-content-center text-white">Batal
-                            Daftar
-                            Usaha</a>
+                    {{-- CARD LOKASI --}}
+                    <div id="card2" class=" text-white p-4 flex-column rounded-4 gap-5 glass-card cardSection">
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
+                            <p class="text-center">Klik pada peta untuk menentukan titik koordinat lokasi usaha anda</p>
+                        </div>
+
+                        <div class="d-flex flex-column gap-3">
+
+                            <div class="d-flex flex-column gap-2 w-100">
+                                <p class="fw-semibold mb-0">Kategori Sektor Ekonomi Kreatif</p>
+                                <input type="text" id="koordinat" class="form-control mb-3 rounded-pill px-4 py-2"
+                                    placeholder="Klik di peta untuk mendapatkan koordinat" readonly>
+
+                                <div id="map" class="rounded-4"></div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="d-flex flex-column gap-4 w-100">
+                            <a onclick="tampilkanCard(3)" class="btn btn-primary rounded-pill px-4 py-2">Lanjut</a>
+                            <a onclick="tampilkanCard(1)"
+                                class="btn btn-outline-light rounded-pill px-4 py-2">Kembali</a>
+                            <a href="{{ route('home') }}"
+                                class="w-100 d-flex flex-row justify-content-center text-white">Batal
+                                Daftar
+                                Usaha</a>
+                        </div>
+                    </div>
+
+
+                    {{-- CARD DATA TAMBAHAN --}}
+                    <div id="card3" class=" text-white p-4 flex-column rounded-4 gap-5 glass-card cardSection">
+                        <div class="d-flex flex-column gap-2 align-items-center">
+                            <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
+                            <p class="text-center">Tambahkan Foto Usaha anda dalam bentuk Foto Produk, tempat, alat
+                                usaha,
+                                atau surat usaha</p>
+                        </div>
+
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex flex-column w-100">
+                                <p class="fw-semibold mb-0">Foto Bukti Usaha</p>
+
+                                <div id="preview" class="w-100 h-100 d-flex justify-content-center mb-4"></div>
+
+                                <div class="input-group rounded-pill border border-dark overflow-hidden">
+                                    <!-- text‐box palsu tempat menampilkan nama file -->
+                                    <input type="text" class="form-control border-0 ps-3" placeholder="nama file"
+                                        readonly>
+
+                                    <!-- tombol/ikon unggah -->
+                                    <label class="input-group-text border-0 pe-3 py-2" style="cursor:pointer;">
+                                        {{-- <i class="bi bi-upload text-primary fs-5"></i> --}}
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="blue" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" />
+                                        </svg>
+
+                                        <input type="file" id="foto" class="d-none">
+                                    </label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="d-flex flex-column gap-4 w-100">
+                            <a href="{{ route('home') }}" class="btn btn-primary rounded-pill px-4 py-2">Ajukan
+                                Usaha</a>
+                            <a onclick="tampilkanCard(2)"
+                                class="btn btn-outline-light rounded-pill px-4 py-2">Kembali</a>
+                            <a href="{{ route('home') }}"
+                                class="w-100 d-flex flex-row justify-content-center text-white">Batal
+                                Daftar
+                                Usaha</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </form>
+
+
+        {{-- <form class="container px-0 px-md-5" action="">
+            <div class="container-sm h-100 d-flex flex-column py-4 px-2 px-md-5">
+
+                CARD NAMA USAHA
+                <div id="card1"
+                    class=" text-white p-4 flex-column rounded-4 gap-5 glass-card cardSection active align-items-md-start">
+
+                </div>
+
+
+            </div>
+
+        </form> --}}
 
     </section>
 

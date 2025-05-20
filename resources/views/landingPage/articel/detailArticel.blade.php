@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-@include('components.head')
+@include('components.head2')
 
 <style>
     body {
@@ -124,7 +124,7 @@
 
     {{-- event lain --}}
     <section class="container-xxl text-black">
-        <h2 class="fw-bold">Event Lainnya</h2>
+        <h2 class="fw-bold">Artikel Lainnya</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
             <?php foreach ($data as $item): ?>
             <div class="col">
@@ -141,7 +141,7 @@
                             <p class="m-0 fw-semibold text"><?= $item['sumber'] ?></p>
                             <div class="d-flex flex-row w-100 justify-content-between">
                                 <p class="m-0"><?= $item['tanggal'] ?></p>
-                                <a href="{{ route(name: 'detailEvent') }}">Selengkapnya > </a>
+                                <a class="text-black text-decoration-none" href="{{ route(name: 'detailEvent') }}">Selengkapnya > </a>
                             </div>
                         </div>
                     </div>
