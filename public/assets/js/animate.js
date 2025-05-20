@@ -47,6 +47,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: "power2.out",
     });
 
+    gsap.from(".boxSectorUp2", {
+        scrollTrigger: {
+            trigger: ".boxSectorUp2", // Animasi dimulai saat .boxSectorUp masuk viewport
+            start: "top 90%", // Trigger saat bagian atas elemen 80% dari tinggi viewport
+            toggleActions: "play none none reset", // Hanya play sekali
+            // once: true, // Jalankan sekali saja
+        },
+        y: 100, // Mulai dari bawah (geser ke atas)
+        opacity: 0, // Mulai dari transparan
+        duration: 1.0, // Durasi animasi
+        delay: 0.5, // Delay sebelum animasi dimulai (jika diperlukan)
+        stagger: 0.1, // Jeda antar elemen jika ada lebih dari satu
+        ease: "power2.out",
+    });
+
     const hasVisited = sessionStorage.getItem("hasVisited");
 
     const splash = document.getElementById("splash-screen");

@@ -142,7 +142,7 @@
         <h2 class="fw-bold mb-3">Populer</h2>
 
         <?php foreach ($data as $item): ?>
-        <div class="card w-100 rounded-4 overflow-hidden d-flex flex-column zoom-card-3 boxSectorUp">
+        <div class="card w-100 rounded-4 overflow-hidden d-flex flex-column zoom-card-3 boxSectorUp2">
             <img src="{{ asset('assets/img/logoekraf.png') }}" alt="" class="w-100">
 
             <div class="w-auto p-3 d-flex flex-column justify-content-between">

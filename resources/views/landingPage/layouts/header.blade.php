@@ -96,7 +96,7 @@
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Informasi
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu shadow-none py-0" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('articel') }}">Artikel</a></li>
                         <li><a class="dropdown-item" href="{{ route('event') }}">Event</a></li>
                     </ul>
