@@ -1,30 +1,30 @@
 <?php
 
-use App\Http\Controllers\Admin\DataSektorController;
-use App\Http\Controllers\Popup\ErrorController;
-use App\Http\Controllers\Popup\PopUpController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ArtikelController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LupaSandiController;
-use App\Http\Controllers\Admin\BerandaAdminController;
-use App\Http\Controllers\Admin\TerimaEventController;
-use App\Http\Controllers\Admin\DataEventController;
-use App\Http\Controllers\Admin\TerimaUsahaController;
-use App\Http\Controllers\Admin\DataUsahaController;
-use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Auth\GoogleLoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\UsahaController;
+use App\Http\Controllers\Popup\ErrorController;
+use App\Http\Controllers\Popup\PopUpController;
 use App\Http\Controllers\Admin\SektorController;
+use App\Http\Controllers\Admin\ArtikelController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LupaSandiController;
+use App\Http\Controllers\Admin\DataEventController;
+use App\Http\Controllers\Admin\DataUsahaController;
+use App\Http\Controllers\Admin\DataSektorController;
+use App\Http\Controllers\Auth\GoogleLoginController;
 use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\Pengusaha\ProfilController;
+use App\Http\Controllers\Admin\ProfilAdminController;
+use App\Http\Controllers\Admin\TerimaEventController;
+use App\Http\Controllers\Admin\TerimaUsahaController;
 use App\Http\Controllers\LandingPage\AboutController;
 use App\Http\Controllers\LandingPage\GraphController;
 use App\Http\Controllers\Pengusaha\BerandaController;
+use App\Http\Controllers\Admin\BerandaAdminController;
 use App\Http\Controllers\LandingPage\SectorController;
 use App\Http\Controllers\LandingPage\ArticelController;
 use App\Http\Controllers\LandingPage\HomeEventController;
@@ -33,6 +33,7 @@ use App\Http\Controllers\Pengusaha\InformasiUsahaController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurEventController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurGaleryController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
+use App\Http\Controllers\landingPage\BussinesRegistrationController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
 
 Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
@@ -105,3 +106,42 @@ Route::get('/artikel/detailArticel', [ArticelController::class, 'detailarticel']
 Route::get('/event', [HomeEventController::class, 'index'])->name('event');
 Route::get('/event/detailEvent', [HomeEventController::class, 'detail'])->name('detailEvent');
 Route::get('/infografis', [GraphController::class, 'index'])->name('graph');
+
+
+Route::get('/infografissfd', [BussinesRegistrationController::class, 'index'])->name('bussinesRegistration');
+
+
+
+
+
+
+Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
+
+Route::get('/entrepreneur/event', [EntrepreneurEventController::class, 'index'])->name('entrepreneur-event');
+Route::get('/entrepreneur/event/form', [EntrepreneurEventController::class, 'form'])->name('entrepreneur-event-form');
+Route::get('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'show'])->name('entrepreneur-event-show');
+Route::post('/entrepreneur/event/edit', [EntrepreneurEventController::class, 'store'])->name('entrepreneur-event-post');
+Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'update'])->name('entrepreneur-event-put');
+Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
+
+Route::get('/entrepreneur/business', [EntrepreneurBusinessController::class, 'index'])->name('entrepreneur-business');
+Route::get('/entrepreneur/business/show', [EntrepreneurBusinessController::class, 'show'])->name('entrepreneur-business-show');
+Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurBusinessController::class, 'update'])->name('entrepreneur-event-put');
+Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
+
+Route::get('/entrepreneur/product', [EntrepreneurProductController::class, 'index'])->name('entrepreneur-product');
+Route::get('/entrepreneur/product/show/{id}', [EntrepreneurProductController::class, 'show'])->name('entrepreneur-product-show');
+Route::post('/entrepreneur/product', [EntrepreneurProductController::class, 'store'])->name('entrepreneur-product-store');
+Route::put('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'update'])->name('entrepreneur-product-update');
+Route::delete('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'destroy'])->name('entrepreneur-product-destroy');
+
+Route::get('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'index'])->name('entrepreneur-galery');
+Route::get('/entrepreneur/galery/show/{id}', [EntrepreneurGaleryController::class, 'show'])->name('entrepreneur-galery-show');
+Route::post('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'store'])->name('entrepreneur-galery-store');
+Route::put('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'update'])->name('entrepreneur-galery-update');
+Route::delete('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'destroy'])->name('entrepreneur-galery-destroy');
+
+Route::get('/sektor/product/aduanbussines', [SectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
+
+Route::get('/entrepreneur/profile', [ProfilController::class, 'index'])->name('entrepreneur-profile');
+Route::get('/entrepreneur/logout', [ProfilController::class, 'index'])->name('entrepreneur-logout');

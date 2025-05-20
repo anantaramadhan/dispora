@@ -70,13 +70,41 @@
                 </button>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         {{-- dropdown --}}
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="navbar-nav ms-auto d-flex justify-content-center align-items-start">
-                <li class="nav-item">
+                <li class="nav-item w-fit hover:bg-amber-400">
+                    <a href="{{ route('home') }}"
+                        class="nav-link {{ Request::is('beranda*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Beranda</a>
+                </li>
+                <li class="nav-item w-fit hover:bg-amber-400">
+                    <a href="{{ route('about') }}"
+                        class="nav-link {{ Request::is('tentang*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Tentang</a>
+                </li>
+                <li class="nav-item w-fit hover:bg-amber-400">
+                    <a href="{{ route('graph') }}"
+                        class="nav-link {{ Request::is('ingo-grafis*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Info
+                        Grafis</a>
+                </li>
+                <li class="nav-item w-fit hover:bg-amber-400">
+                    <a href="{{ route('sector') }}"
+                        class="nav-link {{ Request::is('subsektor*') ? 'active' : 'collapsed' }} fw-semibold fs-6 text-black">Daftar
+                        Subsektor</a>
+                </li>
+                <li class="nav-item w-fit hover:bg-amber-400 dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold fs-6 text-black" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Informasi
+                    </a>
+                    <ul class="dropdown-menu position-absolute py-0 top-100" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('articel') }}">Artikel</a></li>
+                        <li><a class="dropdown-item" href="{{ route('event') }}">Event</a></li>
+                    </ul>
+                </li>
+                {{-- <li class="nav-item">
                     <a href="#home" class="nav-link fw-semibold fs-6 text-black">Beranda</a>
                 </li>
+                
                 <li class="nav-item">
                     <a href="#artikel" class="nav-link fw-semibold fs-6 text-black">Tentang</a>
                 </li>
@@ -95,7 +123,7 @@
                         <li><a class="dropdown-item" href="#artikel">Artikel</a></li>
                         <li><a class="dropdown-item" href="#event">Event</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
 

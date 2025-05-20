@@ -160,7 +160,7 @@
     
     ?>
 
-    <section class="w-100 h-100 d-flex flex-column align-items-center">
+    <section class="w-100 h-100 d-flex flex-column align-items-center align-items-md-start">
         <div class="min-vw-100 p-4 d-flex justify-content-end">
             <div class="d-flex flex-row gap-2 align-items-center">
                 <img src="{{ asset('assets/img/logoEkrafWhite.png') }}" alt="" style="width: 40px;">
@@ -173,7 +173,7 @@
 
                 {{-- CARD NAMA USAHA --}}
                 <div id="card1"
-                    class=" text-white w-25 p-4 flex-column rounded-4 gap-5 glass-card cardSection active">
+                    class=" text-white w-25 p-4 flex-column rounded-4 gap-5 glass-card cardSection active align-items-md-start">
                     <div class="d-flex flex-column gap-2 align-items-center">
                         <h2 class="fw-semibold">Daftarkan Usahanmu</h2>
                         <p class="text-center">Masukkan data dengan benar dan jika masih bingung terhadap sektor apa
@@ -186,26 +186,26 @@
                     <div class="d-flex flex-column gap-3">
                         <div class="d-flex flex-column gap-2 w-100">
                             <p class="fw-semibold mb-0">Nama Usaha</p>
-                            <input class="form-control rounded-pill border-0 py-2 px-4"
+                            <input id="business-name" class="form-control rounded-pill border-0 py-2 px-4"
                                 placeholder="masukkan nama usaha disini..." type="text">
                         </div>
 
                         <div class="d-flex flex-column gap-2 w-100">
                             <p class="fw-semibold mb-0">Nama Pemilik</p>
-                            <input class="form-control rounded-pill border-0 py-2 px-4"
+                            <input id="owner-name" class="form-control rounded-pill border-0 py-2 px-4"
                                 placeholder="masukkan nama usaha disini..." type="text">
                         </div>
 
                         <div class="d-flex flex-column gap-2 w-100">
                             <p class="fw-semibold mb-0">Deskripsi Usaha</p>
-                            <textarea class="form-control rounded-4 border-0 py-2 px-4 overflow-hidden" style="height: 120px;"
-                                placeholder="masukkan nama usaha disini..." row="4" type="text"></textarea>
+                            <textarea id="business-description" class="form-control rounded-4 border-0 py-2 px-4 overflow-hidden"
+                                style="height: 120px;" placeholder="masukkan nama usaha disini..." row="4" type="text"></textarea>
                         </div>
 
                         <div class="d-flex flex-column gap-2 w-100">
                             <p class="fw-semibold mb-0">Kategori Sektor Ekonomi Kreatif</p>
-                            <input class="form-control rounded-pill py-2 px-4" list="daftarKota" id="pilihKota"
-                                placeholder="Ketik untuk memilih sektor...">
+                            <input id="sector-category" class="form-control rounded-pill py-2 px-4" list="daftarKota"
+                                id="pilihKota" placeholder="Ketik untuk memilih sektor...">
                             <datalist id="daftarKota">
                                 <?php foreach ($data as $item):?>
                                 <option value="<?= $item['title'] ?>">
@@ -269,16 +269,15 @@
 
                             <div class="input-group rounded-pill border border-dark overflow-hidden">
                                 <!-- text‐box palsu tempat menampilkan nama file -->
-                                <input type="text" class="form-control border-0 ps-3"
-                                    placeholder="nama file" readonly>
+                                <input type="text" class="form-control border-0 ps-3" placeholder="nama file"
+                                    readonly>
 
                                 <!-- tombol/ikon unggah -->
-                                <label class="input-group-text border-0 pe-3 py-2"
-                                    style="cursor:pointer;">
+                                <label class="input-group-text border-0 pe-3 py-2" style="cursor:pointer;">
                                     {{-- <i class="bi bi-upload text-primary fs-5"></i> --}}
                                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        viewBox="0 0 24 24">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="none" viewBox="0 0 24 24">
                                         <path stroke="blue" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2"
                                             d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" />

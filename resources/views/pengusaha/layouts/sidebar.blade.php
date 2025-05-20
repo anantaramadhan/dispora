@@ -3,61 +3,14 @@
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
 
-        <!-- Menu Beranda -->
-        <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/beranda')) active @else collapsed @endif" href="{{ route('beranda') }}">
-                <i class="bi bi-house-door"></i>
-                <span>Beranda</span>
-            </a>
-        </li><!-- End Beranda Nav -->
-
-        <!-- Menu Eventmu -->
-        <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/eventmu', 'pengusaha/eventmu/tambah', 'pengusaha/eventmu/edit')) active @else collapsed @endif" href="{{ route('eventmu') }}">
-                <i class="bi bi-calendar-event"></i>
-                <span>Eventmu</span>
-            </a>
-        </li><!-- End Eventmu Nav -->
-
-        <!-- Menu Informasi Usaha -->
-        <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/informasiusaha', 'pengusaha/informasiusaha/edit')) active @else collapsed @endif" href="{{ route('informasiusaha') }}">
-                <i class="bi bi-shop"></i>
-                <span>Informasi usaha</span>
-            </a>
-        </li><!-- End Informasi Usaha Nav -->
-
-        <!-- Menu Produk Usaha -->
-        <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/produkusaha', 'pengusaha/produkusaha/tambah', 'pengusaha/produkusaha/edit')) active @else collapsed @endif" href="{{ route('produkusaha') }}">
-                <i class="bi bi-bag"></i>
-                <span>Produk Usahamu</span>
-            </a>
-        </li><!-- End Produk Usaha Nav -->
 
         <!-- Menu Pengaduan -->
-        <li class="nav-item">
-            <a class="nav-link @if(Request::is('pengusaha/pengaduan')) active @else collapsed @endif" href="{{ route('pengaduan') }}">
-                <i class="bi bi-file-earmark-text"></i> <!-- Changed to report/document icon -->
-                <span>Pengaduan</span>
-            </a>
-        </li><!-- End Pengaduan Nav -->
-
-        <!-- Menu Keluar -->
-        <li class="nav-item">
-            <a class="nav-link @if (Request::is('pengusaha/logout')) active @else collapsed @endif" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Keluar</span>
-            </a>
-            <!-- Form Logout -->
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </li><!-- End Keluar Nav -->
+        <!-- End Keluar Nav -->
 
         <!-- Menu Beranda for Entrepreneur -->
         <li class="nav-item">
-            <a class="nav-link @if (Request::is('entrepreneur')) active @else collapsed @endif" href="{{ route('entrepreneur') }}">
+            <a class="nav-link @if (Request::is('entrepreneur')) active @else collapsed @endif"
+                href="{{ route('entrepreneur') }}">
                 <i class="bi bi-house-door"></i>
                 <span>Beranda</span>
             </a>
@@ -65,7 +18,8 @@
 
         <!-- Menu Eventmu for Entrepreneur -->
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('entrepreneur/event*') ? 'active' : 'collapsed' }}" href="{{ route('entrepreneur-event') }}">
+            <a class="nav-link {{ Request::is('entrepreneur/event*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-event') }}">
                 <i class="bi bi-calendar-event"></i>
                 <span>Eventmu</span>
             </a>
@@ -73,7 +27,8 @@
 
         <!-- Menu Business Information for Entrepreneur -->
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('entrepreneur/business*') ? 'active' : 'collapsed' }}" href="{{ route('entrepreneur-business') }}">
+            <a class="nav-link {{ Request::is('entrepreneur/business*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-business') }}">
                 <i class="bi bi-shop"></i>
                 <span>Informasi usaha</span>
             </a>
@@ -81,7 +36,8 @@
 
         <!-- Menu Products for Entrepreneur -->
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('entrepreneur/product*') ? 'active' : 'collapsed' }}" href="{{ route('entrepreneur-product') }}">
+            <a class="nav-link {{ Request::is('entrepreneur/product*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-product') }}">
                 <i class="bi bi-bag"></i>
                 <span>Produk Usahamu</span>
             </a>
@@ -89,11 +45,34 @@
 
         <!-- Menu Profil for Entrepreneur -->
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('entrepreneur/profile*') ? 'active' : 'collapsed' }}" href="{{ route('entrepreneur-profile') }}">
+            <a class="nav-link {{ Request::is('entrepreneur/profile*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-profile') }}">
                 <i class="bi bi-person-circle"></i>
                 <span>Profile</span>
             </a>
         </li><!-- End Profil Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('entrepreneur/complaint*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-complaint') }}">
+                <i class="bi bi-file-earmark-text"></i> <!-- Changed to report/document icon -->
+                <span>Pengaduan</span>
+            </a>
+        </li><!-- End Pengaduan Nav -->
+
+        <!-- Menu Keluar -->
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('entrepreneur/logout*') ? 'active' : 'collapsed' }}"
+                href="{{ route('entrepreneur-logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Keluar</span>
+            </a>
+            <!-- Form Logout -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
 
     </ul>
 
