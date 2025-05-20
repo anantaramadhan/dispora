@@ -27,7 +27,7 @@ class HandleGoogleCallback extends Controller
         Session::put('user', $user);
 
         return match ($user['role']) {
-            'admin' => redirect('/admin/dashboard'),
+            'admin' => redirect('/admin'),
             'entrepreneur' => redirect('/entrepreneur/home'),
             'visitor_logged' => redirect('/visitor/home'),
             default => redirect('/login')->with('error', 'Role tidak dikenali.'),

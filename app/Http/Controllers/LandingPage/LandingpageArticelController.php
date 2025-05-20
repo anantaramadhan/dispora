@@ -5,17 +5,17 @@ namespace App\Http\Controllers\landingPage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeEventController extends Controller
+class LandingpageArticelController extends Controller
 {
     public function index()
     {
         // Kembalikan tampilan untuk form info usaha
-        return view('landingPage.event.index');
+        return view('landingPage.articel.index');
     }
 
-    public function detail()
+    public function detailarticel()
     {
         // Kembalikan tampilan untuk form info usaha
-        return view('landingPage.event.detailEvent');
+        return view('landingPage.articel.detailArticel');
     }
 }

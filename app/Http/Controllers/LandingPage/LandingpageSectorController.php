@@ -5,7 +5,7 @@ namespace App\Http\Controllers\landingPage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class   SectorController extends Controller
+class LandingpageSectorController extends Controller
 {
     public function index()
     {
@@ -30,5 +30,4 @@ class   SectorController extends Controller
         // Kembalikan tampilan untuk form info usaha
         return view('landingPage.listSector.businessSector.businessComplaints');
     }
-
 }

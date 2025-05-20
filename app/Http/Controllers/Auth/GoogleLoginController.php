@@ -58,7 +58,7 @@ class GoogleLoginController extends Controller
         return match ($user['role']) {
             'admin' => redirect('/admin'),
             'entrepreneur' => redirect('/entrepreneur'),
-            'visitor_logged' => redirect('/visitor'),
+            'visitor_logged' => redirect('/visitor_logged'),
             default => redirect('/login')->with('error', 'Role tidak dikenali'),
         };
     }
