@@ -36,6 +36,7 @@ use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
 use App\Http\Controllers\landingPage\BussinesRegistrationController;
 use App\Http\Controllers\landingPage\LandingpageHomeEventController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurDashboardController;
 use App\Http\Controllers\landingPage\LandingpageBussinesRegistrationController;
 
 Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
@@ -95,7 +96,7 @@ Route::get('admin/error', [PopUpController::class, 'error'])->name('popup.404');
 // ROUTE UNTUK PENGUSAHA
 Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
 
-Route::get('/sektor/product/aduanbussines', [LandingpageSectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
+Route::get('/sektor/product/aduanbusses', [LandingpageSectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
 
 // Route for other entrepreneur routes (events, business, products, etc.)
 
@@ -145,7 +146,7 @@ Route::middleware(['auth.frontend', 'role:visitor_logged'])->group(function () {
 
 
 
-Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
+Route::get('/entrepreneur', [EntrepreneurDashboardController::class, 'index'])->name('entrepreneur');
 
 Route::get('/entrepreneur/event', [EntrepreneurEventController::class, 'index'])->name('entrepreneur-event');
 Route::get('/entrepreneur/event/form', [EntrepreneurEventController::class, 'form'])->name('entrepreneur-event-form');
