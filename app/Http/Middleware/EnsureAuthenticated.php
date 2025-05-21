@@ -18,8 +18,20 @@ class EnsureAuthenticated
     public function handle(Request $request, Closure $next)
     {
         if (!Session::has('access_token')) {
-            return redirect('/login');
+            return redirect()->route('login-google');
         }
+
+        // if (!session()->has('access_token')) {
+        //     return redirect()
+        //         ->route('login-google')
+        //         ->with('error', [
+        //             'header' => 'Autentikasi diperlukan',
+        //             'body' => 'Silakan login untuk mengakses formulir pengajuan usaha.',
+        //             'suggestion' => 'Gunakan akun Google yang valid.',
+        //         ]);
+
+        //         return redirect()->back();
+        // }
 
         return $next($request);
     }

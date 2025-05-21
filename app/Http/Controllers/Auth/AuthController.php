@@ -12,26 +12,8 @@ class AuthController extends Controller
     public function redirectToGoogle()
     {
 
-        // 
-        // Arahkan user ke backend
         return redirect(config('services.backend_api') . '/api/web/auth/redirect/google');
     }
-
-    // public function handleGoogleCallback(Request $request)
-    // {
-    //     $response = Http::get(config('services.backend_api') . '/api/auth/callback/google', $request->all());
-
-    //     if ($response->successful()) {
-    //         $data = $response->json();
-
-    //         Session::put('access_token', $data['access_token']);
-    //         Session::put('user', $data['user']);
-
-    //         return redirect('/dashboard');
-    //     }
-
-    //     return redirect('/login')->withErrors('Login gagal.');
-    // }
 
     public function logout(Request $request)
     {
@@ -41,8 +23,13 @@ class AuthController extends Controller
             Http::withToken($token)->post(config('services.backend_api') . '/api/logout');
         }
 
+        // Hapus data session spesifik (lebih aman daripada flush semua)
+        // Session::forget('access_token');
+        // Session::forget('user');
+
+        // Atau kalau kamu memang yakin ingin hapus semua session (termasuk notifikasi):
         Session::flush();
 
-        return redirect('/login');
+        return redirect()->route('landingpage-home');
     }
 }
