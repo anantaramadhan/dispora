@@ -25,20 +25,23 @@ use App\Http\Controllers\LandingPage\AboutController;
 use App\Http\Controllers\LandingPage\GraphController;
 use App\Http\Controllers\Pengusaha\BerandaController;
 use App\Http\Controllers\Admin\BerandaAdminController;
-use App\Http\Controllers\LandingPage\SectorController;
-use App\Http\Controllers\LandingPage\ArticelController;
-use App\Http\Controllers\LandingPage\HomeEventController;
-use App\Http\Controllers\Pengusaha\ProdukUsahaController;
-use App\Http\Controllers\Pengusaha\InformasiUsahaController;
+use App\Http\Controllers\landingPage\LandingpageHomeController;
+use App\Http\Controllers\landingPage\LandingpageAboutController;
+use App\Http\Controllers\landingPage\LandingpageGraphController;
+use App\Http\Controllers\landingPage\LandingpageSectorController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurEventController;
+use App\Http\Controllers\landingPage\LandingpageArticelController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurGaleryController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
 use App\Http\Controllers\landingPage\BussinesRegistrationController;
+use App\Http\Controllers\landingPage\LandingpageHomeEventController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
+use App\Http\Controllers\landingPage\LandingpageBussinesRegistrationController;
 
 Route::get('/login/google', [AuthController::class, 'redirectToGoogle'])->name('login-google');
 Route::get('/auth/callback/google', [GoogleLoginController::class, 'handleGoogleCallback']);
-Route::post('/logout', [AuthController::class, 'logout']);
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout-google');
 
 // Route login
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -92,23 +95,50 @@ Route::get('admin/error', [PopUpController::class, 'error'])->name('popup.404');
 // ROUTE UNTUK PENGUSAHA
 Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
 
+Route::get('/sektor/product/aduanbussines', [LandingpageSectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
+
 // Route for other entrepreneur routes (events, business, products, etc.)
 
+
+
+
+
+
+
 // Route landing Page
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/tentang', [AboutController::class, 'index'])->name('about');
-Route::get('/sektor', [SectorController::class, 'index'])->name('sector');
-Route::get('/sektor/product/detailProduk', [SectorController::class, 'detailProduct'])->name('detailProduct');
-Route::get('/sektor/product/detailbussines', [SectorController::class, 'detailBussines'])->name('detailbussines');
-Route::get('/sektor/product/aduanbussines', [SectorController::class, 'businessComplaints'])->name('businessComplaints');
-Route::get('/artikel', [ArticelController::class, 'index'])->name('articel');
-Route::get('/artikel/detailArticel', [ArticelController::class, 'detailarticel'])->name('detailArticel');
-Route::get('/event', [HomeEventController::class, 'index'])->name('event');
-Route::get('/event/detailEvent', [HomeEventController::class, 'detail'])->name('detailEvent');
-Route::get('/infografis', [GraphController::class, 'index'])->name('graph');
+Route::get('/', [LandingpageHomeController::class, 'first']);
+Route::get('/home', [LandingpageHomeController::class, 'index'])->name('landingpage-home');
+
+Route::get('/tentang', [LandingpageAboutController::class, 'index'])->name('landingpage-about');
+
+Route::get('/sektor', [LandingpageSectorController::class, 'index'])->name('landingpage-sector');
+Route::get('/sektor/product/detailProduk', [LandingpageSectorController::class, 'detailProduct'])->name('landingpage-detailProduct');
+Route::get('/sektor/product/detailbussines', [LandingpageSectorController::class, 'detailBussines'])->name('landingpage-detailbussines');
+
+Route::get('/sektor/product/aduanbussines', [LandingpageSectorController::class, 'businessComplaints'])->name('landingpage-businessComplaints');
+
+Route::get('/artikel', [LandingpageArticelController::class, 'index'])->name('landingpage-articel');
+Route::get('/artikel/detailArticel', [LandingpageArticelController::class, 'detailarticel'])->name('landingpage-detailArticel');
+
+Route::get('/event', [LandingpageHomeEventController::class, 'index'])->name('landingpage-event');
+Route::get('/event/detailEvent', [LandingpageHomeEventController::class, 'detail'])->name('landingpage-detailEvent');
+
+Route::get('/infografis', [LandingpageGraphController::class, 'index'])->name('landingpage-graph');
+
+Route::middleware(['auth.frontend', 'role:visitor_logged'])->group(function () {
+    Route::get('/business-form', [LandingpageBussinesRegistrationController::class, 'form'])->name('form-business-submission');
+    Route::post('/business-submission', [LandingpageBussinesRegistrationController::class, 'store'])->name('submit.business');
+});
 
 
-Route::get('/infografissfd', [BussinesRegistrationController::class, 'index'])->name('bussinesRegistration');
+
+// Route::get('/sfsf', [LandingpageBussinesRegistrationController::class, 'form'])->name('sector');
+
+// Route::get('/sf', [LandingpageBussinesRegistrationController::class, 'form'])->name('graph');
+
+// Route::get('/sfsfsf', [LandingpageBussinesRegistrationController::class, 'form'])->name('bussinesRegistration');
+
+// Route::get('/sfpler', [LandingpageBussinesRegistrationController::class, 'form'])->name('detailArticel');
 
 
 
@@ -141,7 +171,5 @@ Route::post('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'store
 Route::put('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'update'])->name('entrepreneur-galery-update');
 Route::delete('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'destroy'])->name('entrepreneur-galery-destroy');
 
-Route::get('/sektor/product/aduanbussines', [SectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
-
 Route::get('/entrepreneur/profile', [ProfilController::class, 'index'])->name('entrepreneur-profile');
-Route::get('/entrepreneur/logout', [ProfilController::class, 'index'])->name('entrepreneur-logout');
+// Route::get('/entrepreneur/logout', [ProfilController::class, 'index'])->name('entrepreneur-logout');

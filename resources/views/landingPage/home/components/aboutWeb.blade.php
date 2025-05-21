@@ -18,10 +18,10 @@
             itu daftarkan usaha Ekonomi Kreatifmu sekarang.</p>
 
         <div class="d-flex flex-column flex-md-row gap-4 w-100 justify-content-between">
-            <a href="{{ route('bussinesRegistration') }}" class="btn btn-primary rounded-5 w-100 py-2">daftarkan Usaha
+            <a href="{{ route('form-business-submission') }}" class="btn btn-primary rounded-5 w-100 py-2">daftarkan
+                Usaha
                 Kreatifmu</a>
             <button class="btn btn-primary rounded-5 w-100 py-2">Unduh Mobile Nganjuk <span>.Ekraf</span></button>
         </div>
     </div>
 </section>
-sf

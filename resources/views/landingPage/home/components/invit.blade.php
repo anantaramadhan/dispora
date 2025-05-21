@@ -9,7 +9,7 @@
             memukau hingga kuliner lezat yang menggugah selera. Mari dukung karya anak bangsa dan jadilah bagian
             dari geliat ekonomi kreatif Nganjuk. Jelajahi sekarang dan temukan inspirasi baru!</p>
 
-        <a href="{{route('sector')}}"
+        <a href="{{ route('landingpage-sector') }}"
             class="btn btn-outline-dark border-2 d-flex flex-row rounded-5 px-5 px-md-0 py-2 align-items-center justify-content-center">
             <p class="m-0  fw-semibold">Cari Kebutuhanmu</p>
             <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"
@@ -28,7 +28,7 @@
             <div class="card-body h-auto pt-3 w-100">
                 <p class="fs-5">Data Usaha Ekonomi Kreatif Kab. Nganjuk</p>
                 <h2 class="fw-bold fs-5">2000</h2>
-                <a href="{{route('graph')}}" class="btn btn-primary">Lihat Selengkapnya</a>
+                <a href="{{ route('landingpage-graph') }}" class="btn btn-primary">Lihat Selengkapnya</a>
             </div>
         </div>
 

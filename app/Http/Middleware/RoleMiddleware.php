@@ -16,6 +16,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, ...$roles)
     {
+
         $user = Session::get('user');
 
         if (!$user || !in_array($user['role'], $roles)) {

@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
         <?php
-
+        
         //data card atas
         $data = [
             [
@@ -47,7 +47,7 @@
                 'description' =>
                     'Tren fashion senantiasa berubah dengan cepat. Dalam hitungan bulan, selalu muncul mode fashion baru. Ini tak lepas dari produktivitas para desainer fashion lokal yang inovatif merancang baju-baju model baru, dan munculnya generasi muda kreatif yang antusias dengan industri fashion ini. Masyarakat sebagai pasar pun juga semakin cerdas dan berselera tinggi dalam memilih fashion. Di sisi lain, sub sektor ini harus menghadapi banyak tantangan. Fashion lokal masih menjadi anak tiri, pasar memprioritaskan ruangnya untuk produk-produk impor, sehingga fashion lokal kurang mendapatkan tempat. Sedangkan tantangan lain yang tak kalah penting adalah sinergi industri hulu ke hilir, mulai dari pabrik tekstil/garmen, perancang busana, sampai ke urusan pasar. Dengan optimisme bahwa industri fashion bisa bersaing di Masyarakat Ekonomi ASEAN (MEA), Kemenparekraf akan melakukan pendampingan melalui fasilitasi-fasilitasi yang bisa mendorong sub sektor ini menjadi semakin besar. Kemenparekraf akan mengeluarkan kebijakan untuk mendorong penggunaan karya fashion dalam negeri, melancarkan ketersediaan bahan baku, sampai pada promosi produk-produk fashion dalam negeri di pasar domestik dan global.',
             ],
-
+        
             [
                 'gambar' => 'assets/svg/filmAnimasiDanVidio.svg',
                 'ilustration' => 'assets/img/sector/alan-alves-CX0r0CKFvYo-unsplash.jpg',
@@ -70,7 +70,7 @@
                     'Industri dan ekosistem permainan (game) lokal memiliki potensi besar untuk berkontribusi dalam ekonomi kreatif Tanah Air. Kontribusi game untuk ekraf Indonesia pada 2017 adalah 1,93 persen PDB, dengan 44.733 jumlah tenaga kerja di sub sektor ini. Di tahun yang sama ada 51 pengembang game lokal baru yang dari tahun ke tahun bertambah jumlahnya. Kemenparekraf mendorong para pengembang game lokal untuk berkarya, karena Indonesia merupakan salah satu negara dengan pangsa pasar game yang peningkatannya cenderung signifikan. Banyak peluang yang bisa didalami, baik sebagai pembuat maupun pemain profesional. Mengingat demografi Indonesia semakin banyak segmen produktif dan jumlah middle income class yang tinggi. Kemenparekraf akan mengelola sub sektor pengembang permainan lebih serius melalui beberapa hal, yaitu menginisiasi munculnya lebih banyak inkubator pengembang permainan, memasukkan unsur-unsur permainan ke dalam dunia pendidikan, memproteksi para pengembang lokal, dan membantu mereka dalam mempromosikan karya-karyanya.',
             ],
         ];
-
+        
         // data card bawah
         $data2 = [
             [
@@ -112,7 +112,7 @@
                 'description' =>
                     'Seni pertunjukan dari masing-masing daerah sudah tersebar secara sporadis ke seluruh wilayah di Indonesia. Banyaknya jumlah seni pertunjukan baik tradisi maupun kontemporer yang selama ini dikreasikan, dikembangkan, dan dipromosikan, telah mendapatkan apresiasi dunia internasional. Peran Pemerintah tentu sangat diperlukan, terutama dalam menentukan regulasi yang komprehensif untuk mendorong sub sektor seni pertunjukan ini supaya lebih berkembang. Tak hanya itu, peran pemerintah dalam memfasilitasi pembangunan gedung atau tempat pertunjukan yang representatif dan bisa diakses oleh semua lapisan masyarakat juga mutlak diperlukan. Sebagai lembaga Pemerintah, Kemenparekraf akan mendukung perkembangan sub sektor seni pertunjukan. Bekraf akan menyediakan fasilitasi regulasi, pembangunan tempat pertunjukan, fasilitasi pembentukan performing art board/council untuk memetakan platform dan menjaga standar seni pertunjukan, festival-festival pertunjukan seni, dan lain sebagainya. Kemenparekraf optimistis sub sektor ini bisa berkembang secara maksimal.',
             ],
-
+        
             [
                 'gambar' => 'assets/svg/seniRupa.svg',
                 'ilustration' => 'assets/img/sector/viktor-talashuk-S39X1P9gsfA-unsplash.jpg',
@@ -128,7 +128,7 @@
                     'Meskipun tidak semutakhir ponsel dan gawai lainnya, televisi dan radio masih mempunyai peran yang sangat besar dalam penyebaran informasi. Saat ini, kepemilikan televisi dan radio sudah merata, sehingga setiap lapisan masyarakat bisa mengakses teknologi ini. Pertumbuhan jumlah stasiun televisi dan stasiun radio pun masih terus bertambah. Namun, pertumbuhan dan potensi tersebut belum disertai dengan tayangan televisi yang berkualitas. Mayoritas program televisi, karena mengejar rating tinggi, tak lagi memperhatikan kualitas program yang ditayangkan. Industri ini kekurangan rumah produksi dan SDM yang bisa merancang program-program berkualitas. Sebagai wakil dari pemerintah untuk menangani industri kreatif, Kemenparekraf akan menyediakan berbagai fasilitasi yang dibutuhkan oleh sub sektor televisi dan radio. Fasilitasi tersebut akan meliputi banyak hal, mulai dari program-program acara yang berkualitas, mendukung pembentukan SDM yang berkualitas, dan segala hal yang berkaitan dengan kekreativitasan dalam sub sektor ini.',
             ],
         ];
-
+        
         // fungsi sort kata
         function potong_kata($teks, $jumlahKata = 13)
         {
@@ -210,8 +210,8 @@
     <div id="popupModal" class="popup-modal d-none">
         <div class="modal-content rounded-4 shadow p-5">
             <a class="close-btn text-black" id="closeModal" style="cursor: pointer">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M6 18 17.94 6M18 18 6.06 6" />
                 </svg>
@@ -225,7 +225,8 @@
 
                 <div class="d-flex gap-3">
                     {{-- <button class="btn btn-secondary" id="closeModal">Tutup</button> --}}
-                    <a href="{{ route('sector') }}" id="subsektorBtn" class="btn btn-primary rounded-5 py-2 px-5">Ke Sub
+                    <a href="{{ route('landingpage-sector') }}" id="subsektorBtn"
+                        class="btn btn-primary rounded-5 py-2 px-5">Ke Sub
                         Sektor</a>
                 </div>
             </div>

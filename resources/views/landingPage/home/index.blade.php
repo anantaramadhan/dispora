@@ -30,8 +30,15 @@
 <script src="{{ asset('assets/css/custom.css') }}"></script>
 
 
+
+
 <body class="d-flex flex-column bg-white min-vh-screen justify-content-between">
+
+
+
     @include('landingPage.layouts.header')
+
+    @include('components.alert')
 
     {{-- spalsh screen --}}
     @if ($showFirst)
