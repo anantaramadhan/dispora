@@ -8,6 +8,7 @@
 
     @include('pengusaha.layouts.header')
     @include('pengusaha.layouts.sidebar')
+    @include('components.alert')
 
     <main id="main" class="main" style="margin-bottom: 35px;">
         <div class="pagetitle">
@@ -21,11 +22,13 @@
                         <div class="card-body pt-4">
                             <!-- Kolom Pencarian Terpisah -->
                             <div class="d-flex justify-content-between mb-3">
-                                <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Event..." onkeyup="searchTable()">
+                                <input type="text" id="searchInput" class="form-control w-50"
+                                    placeholder="Cari Event..." onkeyup="searchTable()">
 
                                 <!-- Button Filter dan Button Ajukan -->
                                 <div class="d-flex">
-                                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="bi bi-funnel"></i> Filter
                                     </button>
                                     <div class="dropdown-menu">
@@ -51,81 +54,98 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    <tr>
-                                        <td>1</td> <!-- Nomor -->
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 1" class="img-fluid" width="60" class="me-2">
-                                                <div class="ms-2">
-                                                    <strong>Festival Seni 2025</strong>
-                                                    <p class="mb-0">Event seni tahunan yang akan diadakan pada bulan Juni 2025.</p>
+                                    @foreach ($events as $event)
+                                        <tr>
+
+                                            <td>{{ $loop->iteration }}</td> <!-- Nomor -->
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    {{-- {{ asset('assets/img/logoekraf.png') }} --}}
+                                                    <img src="{{ config('services.backend_api') . '/storage/' . $event['thumbnail'] }}"
+                                                        alt="{{ config('services.backend_api') . '/storage/' . $event['thumbnail'] }}"
+                                                        class="img-fluid" width="60" class="me-2">
+                                                    <div class="ms-2">
+                                                        <strong>{{ Str::limit($event['title'], 20, '...') }}</strong>
+                                                        <p class="mb-0">
+                                                            {{ Str::limit($event['description'], 40, '...') }}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
-                                        <td>10 Juni 2025</td>
-                                        <td><span class="badge bg-success">Aktif</span></td> <!-- Status Event -->
-                                        <td>
-                                            <a href="{{ route('eventmu.edit', 1) }}" class="btn btn-sm btn-warning">Edit</a>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td> <!-- Nomor -->
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 2" class="img-fluid" width="60" class="me-2">
-                                                <div class="ms-2">
-                                                    <strong>Konser Musik 2025</strong>
-                                                    <p class="mb-0">Konser musik dengan berbagai artis ternama di Juli 2025.</p>
-                                                </div>
-                                            </div>
-                                        </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
-                                        <td>15 Juli 2025</td>
-                                        <td><span class="badge bg-warning">Menunggu</span></td> <!-- Status Event -->
-                                        <td>
-                                            <a href="{{ route('eventmu.edit', 2) }}" class="btn btn-sm btn-warning">Edit</a>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td> <!-- Nomor -->
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 3" class="img-fluid" width="60" class="me-2">
-                                                <div class="ms-2">
-                                                    <strong>Seminar Teknologi 2025</strong>
-                                                    <p class="mb-0">Seminar mengenai teknologi terbaru pada bulan Agustus 2025.</p>
-                                                </div>
-                                            </div>
-                                        </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
-                                        <td>22 Agustus 2025</td>
-                                        <td><span class="badge bg-danger">Batal</span></td> <!-- Status Event -->
-                                        <td>
-                                            <a href="{{ route('eventmu.edit', 3) }}" class="btn btn-sm btn-warning">Edit</a>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td> <!-- Nomor -->
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/img/logoekraf.png') }}" alt="Event 4" class="img-fluid" width="60" class="me-2">
-                                                <div class="ms-2">
-                                                    <strong>Expo Pendidikan 2025</strong>
-                                                    <p class="mb-0">Pameran pendidikan terbesar dengan berbagai institusi terkemuka di September 2025.</p>
-                                                </div>
-                                            </div>
-                                        </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
-                                        <td>5 September 2025</td>
-                                        <td><span class="badge bg-success">Aktif</span></td> <!-- Status Event -->
-                                        <td>
-                                            <a href="{{ route('eventmu.edit', 4) }}" class="btn btn-sm btn-warning">Edit</a>
-                                            <button class="btn btn-sm btn-danger">Hapus</button>
-                                        </td>
-                                    </tr>
+                                            </td> <!-- Gabungkan Foto dan Deskripsi dengan jarak antara keduanya -->
+                                            <td>{{ $event['event_date'] }}</td>
+                                            <td>
+                                                @if ($event['is_approved'] == 1)
+                                                    <span class="badge bg-success">Aktif</span>
+                                                @elseif ($event['is_approved'] == 2)
+                                                    <span class="badge bg-warning text-dark">Menunggu</span>
+                                                @elseif ($event['is_approved'] == 0)
+                                                    <span class="badge bg-danger">Batal</span>
+                                                @else
+                                                    <span class="badge bg-secondary">Tidak diketahui</span>
+                                                @endif
+                                            </td> <!-- Status Event -->
+                                            <td>
+                                                @if ($event['is_approved'] == 1)
+                                                    <a href="{{ route('entrepreneur-event-show', ['id' => $event['id']]) }}"
+                                                        class="btn btn-sm btn-primary">Detail</a>
+                                                @elseif ($event['is_approved'] == 2)
+                                                    <a href="{{ route('entrepreneur-event-show', ['id' => $event['id']]) }}"
+                                                        class="btn btn-sm bg-warning">Edit Pengajuan</a>
+                                                @elseif ($event['is_approved'] == 0)
+                                                    <a href="{{ route('entrepreneur-event-show', ['id' => $event['id']]) }}"
+                                                        class="btn btn-sm btn-danger">Ajukan Ulang</a>
+                                                @else
+                                                    <span class="badge btn-secondary">Tidak diketahui</span>
+                                                @endif
+
+                                                <form
+                                                    action="{{ route('entrepreneur-event-destroy', parameters: ['id' => $event['id']]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-sm btn-danger">Hapus</button>
+                                                </form>
+
+
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                            {{-- <pre>{{ print_r($pagination, true) }}</pre> --}}
+                            @if (isset($pagination['last_page']) && $pagination['last_page'] > 1)
+                                <nav>
+                                    <ul class="pagination justify-content-center">
+                                        {{-- Tombol sebelumnya --}}
+                                        <li class="page-item {{ $pagination['current_page'] == 1 ? 'disabled' : '' }}">
+                                            <a class="page-link" href="?page={{ $pagination['current_page'] - 1 }}"
+                                                aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+
+                                        {{-- Link halaman --}}
+                                        @for ($i = 1; $i <= $pagination['last_page']; $i++)
+                                            <li
+                                                class="page-item {{ $pagination['current_page'] == $i ? 'active' : '' }}">
+                                                <a class="page-link"
+                                                    href="?page={{ $i }}">{{ $i }}</a>
+                                            </li>
+                                        @endfor
+
+                                        {{-- Tombol selanjutnya --}}
+                                        <li
+                                            class="page-item {{ $pagination['current_page'] == $pagination['last_page'] ? 'disabled' : '' }}">
+                                            <a class="page-link" href="?page={{ $pagination['current_page'] + 1 }}"
+                                                aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            @endif
+
                         </div>
                     </div>
                 </div>

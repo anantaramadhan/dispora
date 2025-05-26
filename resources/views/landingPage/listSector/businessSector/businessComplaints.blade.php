@@ -308,7 +308,7 @@
                 <a class="btn btn-primary rounded-pill d-flex flex-row align-items-center justify-content-center"
                     style="height: 44px;" onclick="showAlert()">Tambah Aduan</a>
                 <a class="btn btn-outline-dark rounded-pill d-flex flex-row align-items-center justify-content-center"
-                    style="height: 44px;" href="{{ route('detailbussines') }}">Batal</a>
+                    style="height: 44px;" href="{{ route('landingpage-detailbussines') }}">Batal</a>
             </div>
         </form>
 

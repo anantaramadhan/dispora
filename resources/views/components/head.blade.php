@@ -6,6 +6,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+
     <!-- Favicon -->
     <link href="{{ asset('assets/img/logoEkrafWhite.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logoEkrafWhite.png') }}" rel="apple-touch-icon">

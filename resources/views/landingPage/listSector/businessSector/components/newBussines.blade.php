@@ -121,7 +121,7 @@
             <div class="p-3">
 
                 {{-- TITLE --}}
-                <a href="{{ route('detailbussines') }}" class="text-black text-decoration-none">
+                <a href="{{ route('landingpage-detailbussines') }}" class="text-black text-decoration-none">
                     <h4><?= $item['title'] ?></h4>
                 </a>
                 {{-- LOKASI --}}

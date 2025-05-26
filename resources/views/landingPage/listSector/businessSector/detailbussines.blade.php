@@ -34,11 +34,10 @@
     @include('landingPage.layouts.header')
 
     {{-- SECTION DETAIL PRODUK --}}
-    <section id="detailUsahaHead"
-        class="container-xxl d-flex px-4">
+    <section id="detailUsahaHead" class="container-xxl d-flex px-4">
 
         <div class="w-100 d-flex flex-column rounded-2 gap-4 overflow-hidden mt-lg-4 mt-0 p-4"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  /* lapisan hitam 50% */ url('{{ asset('assets/img/fotousaha2.jpg') }}'); background-size: cover;">
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  /* lapisan hitam 50% */ url('{{ asset('assets/img/fotousaha2.jpg') }}'); background-size: cover;">
             {{-- SEARCH --}}
             {{-- <div class="input-group mb-2 mb-md-0 d-flex flex-row rounded-pill overflow-hidden py-1 px-4"
             style="border: 1px solid #ced4da;">
@@ -74,7 +73,7 @@
                     <p class="mb-0 text-white">120 Ulasan Usaha</p>
 
                     {{-- BUTTON TAMBAH ADUAN USAHA --}}
-                    <a href="{{ route('businessComplaints') }}"
+                    <a href="{{ route('landingpage-businessComplaints') }}"
                         class="btn btn-danger rounded-5 px-4 d-flex align-items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
                             class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
@@ -296,7 +295,7 @@
 
                     <div class="p-3 text-black">
                         {{-- TITLE --}}
-                        <a href="{{ route('detailProduct') }}" class="text-black">
+                        <a href="{{ route('landingpage-detailProduct') }}" class="text-black">
                             <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
                         </a>
 
@@ -471,7 +470,7 @@
 
                     <div class="p-3 text-black">
                         {{-- TITLE --}}
-                        <a href="{{ route('detailProduct') }}" class="text-black">
+                        <a href="{{ route('landingpage-detailProduct') }}" class="text-black">
                             <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
                         </a>
 
@@ -513,8 +512,8 @@
             <form action="" class="d-flex flex-column gap-4 w-100">
                 <h1 class="fw-bold mb-4">Tambahkan </br> Ulasanmu!!</h1>
                 <div class="d-flex flex-column gap-4">
-                    <textarea id="nama" class="rounded-4 bg-transparent text-black p-3" style="height: 140px" rows="4" maxlength="500"
-                        placeholder="Isi disini ulasanmu...." type="text"></textarea>
+                    <textarea id="nama" class="rounded-4 bg-transparent text-black p-3" style="height: 140px" rows="4"
+                        maxlength="500" placeholder="Isi disini ulasanmu...." type="text"></textarea>
                     <div class="d-flex flex-column gap-2">
                         <a class="btn btn-primary text-white rounded-pill" href="">Tambah Ulasan</a>
                         <a class="btn btn-outline-dark rounded-pill" onclick="hapusInput('nama')">Batal</a>
@@ -789,83 +788,83 @@
         [
             'name' => 'You',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
             'token' => 'true',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
         [
             'name' => 'Adam Smith',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
-                                                                                                        fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
-                                                                                                        placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
-                                                                                                        mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
-                                                                                                        malesuada tincidunt ut eleifend odio.',
+                                                                                                            fringilla sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
+                                                                                                            placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
+                                                                                                            mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
+                                                                                                            malesuada tincidunt ut eleifend odio.',
             'time' => '11.00, 21 Oktober 2025',
         ],
     ];

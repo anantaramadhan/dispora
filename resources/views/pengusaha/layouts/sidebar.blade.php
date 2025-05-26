@@ -63,7 +63,7 @@
         <!-- Menu Keluar -->
         <li class="nav-item">
             <a class="nav-link {{ Request::is('entrepreneur/logout*') ? 'active' : 'collapsed' }}"
-                href="{{ route('entrepreneur-logout') }}"
+                href="{{ route('logout-google') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Keluar</span>

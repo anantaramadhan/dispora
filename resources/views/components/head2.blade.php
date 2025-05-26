@@ -29,6 +29,10 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+
     {{-- script bootstrap --}}
     {{-- <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script> --}}
@@ -38,7 +42,8 @@
 
     {{-- custom css --}}
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/

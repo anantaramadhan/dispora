@@ -8,6 +8,7 @@
 
     @include('pengusaha.layouts.header')
     @include('pengusaha.layouts.sidebar')
+    @include('components.alert')
 
     <main id="main" class="main" style="margin-bottom: 35px;">
         <div class="pagetitle">
@@ -15,7 +16,6 @@
             <style>
                 /* CSS untuk menggeser tombol "Tampilkan Selengkapnya" ke kiri */
                 .card-body .btn-link {
-                    margin-left: -12px;
                     /* Geser tombol sedikit ke kiri */
                     margin-top: -30px;
                 }
@@ -28,101 +28,77 @@
                     <div class="card">
                         <div class="card-body pt-4">
                             <!-- Kolom Pencarian Produk -->
-                            <div class="d-flex justify-content-between mb-3">
-                                <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari Produk..." onkeyup="searchTable()">
+                            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                                <form action="{{ route('entrepreneur-product') }}" method="GET"
+                                    class="d-flex mb-2 mb-md-0" style="flex-grow: 1; max-width: 600px;">
+                                    <input type="text" name="search" id="searchInput" class="form-control me-2"
+                                        placeholder="Cari Produk..." value="{{ request('search') }}">
+                                    <button type="submit" class="btn btn-primary me-2">Cari</button>
 
-                                <!-- Tombol Tambah Produk -->
-                                <a href="{{ route('entrepreneur-product-form') }}" class="btn btn-sm btn-success">
+                                    @if (request('search'))
+                                        <a href="{{ route('entrepreneur-product') }}" class="btn btn-outline-secondary"
+                                            title="Reset">
+                                            &times;
+                                        </a>
+                                    @endif
+                                </form>
+
+                                <a href="{{ route('entrepreneur-product-form') }}"
+                                    class="btn btn-sm btn-success ms-3 mt-0 mt-md-0 align-self-center">
                                     <i class="bi bi-plus-circle"></i> Tambah Produk
                                 </a>
                             </div>
 
-                            <!-- Grid Produk -->
-                            <div class="row row-cols-1 row-cols-md-4 g-4">
-                                <!-- Produk 1 -->
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 1">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Produk A</h5>
-                                            <p class="card-text" id="deskripsiProduk1">Deskripsi singkat tentang Produk A. Produk ini sangat bermanfaat untuk kebutuhan harian Anda.</p>
-                                            <p id="deskripsiFull1" class="card-text d-none">Deskripsi lengkap tentang Produk A. Produk ini sangat bermanfaat untuk kebutuhan harian Anda, baik untuk keperluan rumah tangga maupun pribadi. Dengan fitur-fitur canggih yang dimiliki, produk ini menjadi pilihan utama untuk meningkatkan kualitas hidup Anda. Penggunaan yang mudah dan harga yang terjangkau menjadikan produk ini sangat disarankan untuk setiap keluarga.</p>
-                                            <button class="btn btn-link" id="btnShowMore1" onclick="toggleDescription(1)">Tampilkan Selengkapnya</button>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <span class="price">Rp 100.000</span>
-                                            <!-- Tombol Edit dan Hapus -->
-                                            <div class="d-flex justify-content-end mt-2">
-                                                <a href="{{ route('entrepreneur-product-show', 1) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <!-- Produk 2 -->
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 2">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Produk B</h5>
-                                            <p class="card-text" id="deskripsiProduk2">Deskripsi singkat tentang Produk B. Produk ini cocok untuk keperluan rumah tangga.</p>
-                                            <p id="deskripsiFull2" class="card-text d-none">Deskripsi lengkap tentang Produk B. Produk ini cocok untuk keperluan rumah tangga, termasuk untuk memasak, mencuci, dan kegiatan sehari-hari lainnya. Dengan kualitas tinggi dan harga yang bersaing, produk ini akan mempermudah hidup Anda.</p>
-                                            <button class="btn btn-link" id="btnShowMore2" onclick="toggleDescription(2)">Tampilkan Selengkapnya</button>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <span class="price">Rp 150.000</span>
-                                            <!-- Tombol Edit dan Hapus -->
-                                            <div class="d-flex justify-content-end mt-2">
-                                                <a href="{{ route('produk.edit', 2) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <!-- Produk 3 -->
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Produk C</h5>
-                                            <p class="card-text" id="deskripsiProduk3">Deskripsi singkat tentang Produk C. Produk ini adalah pilihan terbaik untuk aktivitas luar ruangan.</p>
-                                            <p id="deskripsiFull3" class="card-text d-none">Deskripsi lengkap tentang Produk C. Produk ini adalah pilihan terbaik untuk aktivitas luar ruangan, seperti hiking, berkemah, atau aktivitas petualangan lainnya. Dilengkapi dengan teknologi terbaru untuk kenyamanan maksimal dan keamanan dalam setiap perjalanan Anda.</p>
-                                            <button class="btn btn-link" id="btnShowMore3" onclick="toggleDescription(3)">Tampilkan Selengkapnya</button>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <span class="price">Rp 200.000</span>
-                                            <!-- Tombol Edit dan Hapus -->
-                                            <div class="d-flex justify-content-end mt-2">
-                                                <a href="{{ route('produk.edit', 3) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <!-- Produk 4 -->
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="{{ asset('assets/img/logoekraf.png') }}" class="card-img-top" alt="Produk 4">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Produk D</h5>
-                                            <p class="card-text" id="deskripsiProduk4">Deskripsi singkat tentang Produk D. Produk ini sangat cocok untuk aktivitas luar ruangan.</p>
-                                            <p id="deskripsiFull4" class="card-text d-none">Deskripsi lengkap tentang Produk D. Produk ini sangat cocok untuk aktivitas luar ruangan, seperti hiking, berkemah, atau aktivitas petualangan lainnya. Dilengkapi dengan teknologi terbaru untuk kenyamanan maksimal dan keamanan dalam setiap perjalanan Anda.</p>
-                                            <button class="btn btn-link" id="btnShowMore4" onclick="toggleDescription(4)">Tampilkan Selengkapnya</button>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <span class="price">Rp 250.000</span>
-                                            <!-- Tombol Edit dan Hapus -->
-                                            <div class="d-flex justify-content-end mt-2">
-                                                <a href="{{ route('produk.edit', 4) }}" class="btn btn-sm btn-warning me-2">Edit</a>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
+                            <!-- Wrapper Scroll -->
+                            <div class="overflow-auto" style="white-space: nowrap;">
+                                <div class="d-flex flex-row" style="gap: 1rem; padding-bottom: 1rem;">
+                                    @if ($products == null)
+                                    @else
+                                        @foreach ($products as $product)
+                                            <div class="card" style="min-width: 250px; max-width: 250px;">
+                                                <img src="{{ config('services.backend_api') . '/storage/' . $product['photo'] }}"
+                                                    class="card-img-top" alt="foto produk"
+                                                    style="width: 100%; height: 250px; object-fit: cover;">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"
+                                                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                        {{ $product['name'] }}
+                                                    </h5>
+                                                    <p class="card-text" id="deskripsiProduk1"
+                                                        style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
+                                                        {{ $product['detail'] }}
+                                                    </p>
+                                                    {{-- <button class="btn btn-link p-0" id="btnShowMore1"
+                                                        onclick="toggleDescription(1)">Detail</button> --}}
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                    <span class="price"><b>Rp</b> {{ $product['price'] }}</span>
+                                                    <div class="d-flex justify-content-end mt-2">
+                                                        <a href="{{ route('entrepreneur-product-show', $product['id']) }}"
+                                                            class="btn btn-sm btn-warning me-2">Edit</a>
+                                                        <form
+                                                            action="{{ route('entrepreneur-product-destroy', $product['id']) }}"
+                                                            method="POST" class="d-inline"
+                                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                class="btn btn-sm btn-danger me-2">Hapus</button>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
+                                    <!-- Tambahkan produk lain dengan struktur yang sama -->
+
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -161,22 +137,6 @@
                 } else {
                     tr[i].style.display = "none";
                 }
-            }
-        }
-
-        // Fungsi untuk menampilkan atau menyembunyikan deskripsi produk
-        function toggleDescription(productId) {
-            var fullDesc = document.getElementById("deskripsiFull" + productId);
-            var shortDesc = document.getElementById("deskripsiProduk" + productId);
-            var btn = document.getElementById("btnShowMore" + productId);
-
-            // Mengecek apakah deskripsi lengkap sedang disembunyikan atau ditampilkan
-            if (fullDesc.classList.contains("d-none")) {
-                fullDesc.classList.remove("d-none");
-                btn.textContent = "Tampilkan Sedikit"; // Ganti teks tombol
-            } else {
-                fullDesc.classList.add("d-none");
-                btn.textContent = "Tampilkan Selengkapnya"; // Ganti teks tombol
             }
         }
     </script>

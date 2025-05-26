@@ -27,7 +27,7 @@
         <div class="box zoom-card card text-center mb-0 rounded-4 d-none d-lg-flex flex-column" style="width: 300px">
             <div class="card-body h-auto pt-3 w-100">
                 <p class="fs-5">Data Usaha Ekonomi Kreatif Kab. Nganjuk</p>
-                <h2 class="fw-bold fs-5">2000</h2>
+                <h2 class="fw-bold fs-5">{{ $TotalBusiness['total'] }}</h2>
                 <a href="{{ route('landingpage-graph') }}" class="btn btn-primary">Lihat Selengkapnya</a>
             </div>
         </div>

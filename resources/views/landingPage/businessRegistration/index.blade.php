@@ -5,10 +5,9 @@
 @include('components.head2')
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
     body {
@@ -133,7 +132,7 @@
 
                                 <input type="text" id="business-location-name" name="business-location_name"
                                     class="form-control mb-3 rounded-pill px-4 py-2"
-                                    placeholder="Nama lokasi otomatis dari peta" readonly>
+                                    placeholder="Nama lokasi otomatis dari peta">
                             </div>
 
 
@@ -262,145 +261,86 @@
             cards.forEach(card => card.classList.remove('active'));
 
             // Tampilkan card sesuai nomor
-            document.getElementById(`card${nomor}`).classList.add('active');
+            // document.getElementById(`card${nomor}`).classList.add('active');
+
+            const selectedCard = document.getElementById('card' + nomor);
+            selectedCard.classList.add('active');
+
+            // Jika card 2 (yang ada peta) sedang ditampilkan
+            if (nomor === 2) {
+                setTimeout(() => {
+                    if (!map) {
+                        // Inisialisasi map hanya sekali
+                        map = L.map('map').setView([-7.250445, 112.768845], 13); // Ubah koordinat sesuai default
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap contributors'
+                        }).addTo(map);
+
+                        map.on('click', function(e) {
+                            const {
+                                lat,
+                                lng
+                            } = e.latlng;
+                            document.getElementById('latitude').value = lat;
+                            document.getElementById('longitude').value = lng;
+                            document.getElementById('business-koordinat').value =
+                                `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
+                            if (typeof L !== 'undefined' && L.marker) {
+                                if (map.clickedMarker) {
+                                    map.removeLayer(map.clickedMarker);
+                                }
+                                map.clickedMarker = L.marker([lat, lng]).addTo(map);
+                            }
+                        });
+                    } else {
+                        map.invalidateSize(); // Resize ulang peta jika sudah ada
+                    }
+                }, 300); // Delay kecil untuk menunggu DOM render
+            }
         }
 
         // Inisialisasi peta
-        var map = L.map('map').setView([-7.6079, 111.9031], 12); // Titik awal: Nganjuk
+        var map = L.map('map').setView([-7.602405870106842, 111.90100841069291], 16);
 
-        // Tambahkan layer peta dari OpenStreetMap
+        // Tambahkan tile gratis dari OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Marker yang bisa digerakkan (optional)
         var marker;
 
-        // Event klik pada peta
-        // map.on('click', function(e) {
-        //     const lat = e.latlng.lat.toFixed(6);
-        //     const lng = e.latlng.lng.toFixed(6);
-
-        //     // Tampilkan di input readonly
-        //     document.getElementById('business-koordinat').value = `${lat}, ${lng}`;
-
-        //     if (marker) {
-        //         marker.setLatLng(e.latlng);
-        //     } else {
-        //         marker = L.marker(e.latlng).addTo(map);
-        //     }
-
-        //     // Simpan nilai ke input hidden
-        //     document.getElementById('business-latitude').value = lat;
-        //     document.getElementById('business-longitude').value = lng;
-
-        //     // Tampilkan atau pindahkan marker
-        //     if (marker) {
-        //         marker.setLatLng(e.latlng);
-        //     } else {
-        //         marker = L.marker(e.latlng).addTo(map);
-        //     }
-
-        //     fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             const displayName = data.display_name || 'Lokasi tidak diketahui';
-        //             document.getElementById('business-location-name').value = displayName;
-        //         })
-        //         .catch(error => {
-        //             console.error('Gagal mengambil nama lokasi:', error);
-        //             document.getElementById('business-location-name').value = 'Gagal mengambil nama lokasi';
-        //         });
-        // });
-
+        // Saat peta diklik
         map.on('click', function(e) {
-            var lat = e.latlng.lat.toFixed(6);
-            var lng = e.latlng.lng.toFixed(6);
+            var lat = e.latlng.lat;
+            var lng = e.latlng.lng;
 
-            // Set input koordinat
-            document.getElementById('business-koordinat').value = lat + ', ' + lng;
-
+            // Update form
             document.getElementById('latitude').value = lat;
             document.getElementById('longitude').value = lng;
+            document.getElementById('business-koordinat').value = lat + ', ' + lng;
 
-            // Tambahkan atau perbarui marker
+            // Hapus marker sebelumnya jika ada
             if (marker) {
-                marker.setLatLng(e.latlng);
-            } else {
-                marker = L.marker(e.latlng).addTo(map);
+                map.removeLayer(marker);
             }
 
-            // Ambil nama lokasi dari koordinat (reverse geocoding)
-            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+            // Tambahkan marker ke lokasi yang diklik
+            marker = L.marker([lat, lng]).addTo(map);
+
+            // Reverse geocoding menggunakan Nominatim (gratis)
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`)
                 .then(response => response.json())
                 .then(data => {
-                    const displayName = data.display_name || 'Lokasi tidak diketahui';
-                    document.getElementById('business-location-name').value = displayName;
+                    const locationName = data.display_name || 'Tidak ditemukan';
+                    document.getElementById('business-location-name').value = locationName;
                 })
                 .catch(error => {
-                    console.error('Gagal mengambil nama lokasi:', error);
-                    document.getElementById('business-location-name').value = 'Gagal mengambil nama lokasi';
+                    console.error('Error fetching location name:', error);
+                    document.getElementById('business-location-name').value = 'Gagal memuat nama lokasi';
                 });
         });
 
-
-
-
-        // js untuk foto
-        // const fileInput = document.getElementById('foto');
-        // const textBox = fileInput.closest('.input-group').querySelector('input[type="text"]');
-        // const preview = document.getElementById('preview');
-        // const MAX_SIZE = 1280; // batas piksel
-
-        // fileInput.addEventListener('change', () => {
-        //     // reset tampilan
-        //     preview.innerHTML = '';
-        //     textBox.value = '';
-
-        //     const file = fileInput.files[0];
-        //     if (!file) return;
-
-        //     // pastikan file gambar
-        //     if (!file.type.startsWith('image/')) {
-        //         alert('File bukan gambar!');
-        //         fileInput.value = '';
-        //         return;
-        //     }
-
-        //     // baca sebagai URL
-        //     const url = URL.createObjectURL(file);
-        //     const imgTemp = new Image();
-
-        //     imgTemp.onload = () => {
-        //         // cek dimensi
-        //         if (imgTemp.width > MAX_SIZE || imgTemp.height > MAX_SIZE) {
-        //             alert(`Gambar terlalu besar! Batas ${MAX_SIZE}px x ${MAX_SIZE}px.`);
-        //             URL.revokeObjectURL(url);
-        //             fileInput.value = '';
-        //             return;
-        //         }
-
-        //         // valid → tampilkan nama & preview
-        //         textBox.value = file.name;
-
-        //         const thumb = document.createElement('img');
-        //         thumb.src = url;
-        //         thumb.classList.add('rounded', 'border', 'mt-1');
-        //         thumb.style.maxWidth = '320px';
-        //         // thumb.style.maxHeight = '120px';
-        //         thumb.style.height = 'auto';
-        //         thumb.style.objectFit = 'contain';
-        //         preview.appendChild(thumb);
-        //     };
-
-        //     imgTemp.onerror = () => {
-        //         alert('Tidak dapat membaca gambar.');
-        //         URL.revokeObjectURL(url);
-        //         fileInput.value = '';
-        //     };
-
-        //     imgTemp.src = url;
-        // });
         const fileInput = document.getElementById('business-proof');
         const textBox = fileInput.closest('.input-group').querySelector('input[type="text"]');
         const preview = document.getElementById('preview');
@@ -460,51 +400,6 @@
                 });
         });
     </script>
-
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form');
-            const submitBtn = document.querySelector('#card3 a.btn-primary');
-
-            submitBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const formData = new FormData();
-                formData.append('business_name', document.querySelector('#business-name').value);
-                formData.append('owner_name', document.querySelector('#owner-name').value);
-                formData.append('description', document.querySelector('#business-description').value);
-                formData.append('sector_id', document.querySelector('#business-sector-category').value);
-                formData.append('location', document.querySelector('#business-location-name').value);
-                formData.append('latitude', document.querySelector('#latitude').value);
-                formData.append('longitude', document.querySelector('#longitude').value);
-                formData.append('proof', document.querySelector('#business-proof').files[0]);
-
-                const BACKEND_URL = "{{ config('app.backend_url') }}";
-
-                fetch('${BACKEND_URL}/api/visitor/business-submission', {
-                        method: 'POST',
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                            'Accept': 'application/json',
-                        },
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.message) {
-                            alert(data.message);
-                            window.location.href = '{{ route('landingpage-home') }}';
-                        } else {
-                            console.log(data);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            });
-        });
-    </script> --}}
-
 
 </body>
 

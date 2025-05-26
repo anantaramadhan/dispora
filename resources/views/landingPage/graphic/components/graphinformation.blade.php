@@ -7,8 +7,8 @@
 
         <div class="d-flex flex-column flex-md-row gap-4">
             <div class="card w-50 p-4 rounded-2 align-items-center zoom-card boxSector">
-                <p class="text-center">Jumlah Pelaku Ekonomi Kreatif yang ada di Kabupaten Indonesia</p>
-                <h1>9999</h1>
+                <p class="text-center">Jumlah Pelaku Ekonomi Kreatif yang ada di Kabupaten Nganjuk</p>
+                <h1>{{ $TotalBusiness['total'] }}</h1>
                 {{-- <button class="btn btn-primary w-100">Lihat Lebih Lanjut</button> --}}
             </div>
 

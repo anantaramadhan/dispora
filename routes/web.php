@@ -32,10 +32,12 @@ use App\Http\Controllers\landingPage\LandingpageSectorController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurEventController;
 use App\Http\Controllers\landingPage\LandingpageArticelController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurGaleryController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurSosmedController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurProductController;
 use App\Http\Controllers\landingPage\BussinesRegistrationController;
 use App\Http\Controllers\landingPage\LandingpageHomeEventController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurBusinessController;
+use App\Http\Controllers\Entrepreneur\EntrepreneurComplaintController;
 use App\Http\Controllers\Entrepreneur\EntrepreneurDashboardController;
 use App\Http\Controllers\landingPage\LandingpageBussinesRegistrationController;
 
@@ -96,13 +98,9 @@ Route::get('admin/error', [PopUpController::class, 'error'])->name('popup.404');
 // ROUTE UNTUK PENGUSAHA
 Route::get('/entrepreneur', [BerandaController::class, 'index'])->name('entrepreneur');
 
-Route::get('/sektor/product/aduanbusses', [LandingpageSectorController::class, 'businessComplaints'])->name('entrepreneur-complaint');
+
 
 // Route for other entrepreneur routes (events, business, products, etc.)
-
-
-
-
 
 
 
@@ -119,7 +117,7 @@ Route::get('/sektor/product/detailbussines', [LandingpageSectorController::class
 Route::get('/sektor/product/aduanbussines', [LandingpageSectorController::class, 'businessComplaints'])->name('landingpage-businessComplaints');
 
 Route::get('/artikel', [LandingpageArticelController::class, 'index'])->name('landingpage-articel');
-Route::get('/artikel/detailArticel', [LandingpageArticelController::class, 'detailarticel'])->name('landingpage-detailArticel');
+Route::get('/artikel/{id}', [LandingpageArticelController::class, 'detailarticel'])->name('landingpage-detailArticel');
 
 Route::get('/event', [LandingpageHomeEventController::class, 'index'])->name('landingpage-event');
 Route::get('/event/detailEvent', [LandingpageHomeEventController::class, 'detail'])->name('landingpage-detailEvent');
@@ -129,6 +127,46 @@ Route::get('/infografis', [LandingpageGraphController::class, 'index'])->name('l
 Route::middleware(['auth.frontend', 'role:visitor_logged'])->group(function () {
     Route::get('/business-form', [LandingpageBussinesRegistrationController::class, 'form'])->name('form-business-submission');
     Route::post('/business-submission', [LandingpageBussinesRegistrationController::class, 'store'])->name('submit.business');
+});
+
+Route::get('/angga', [EntrepreneurGaleryController::class, 'index'])->name('entrepre');
+Route::middleware(['auth.frontend', 'role:entrepreneur'])->group(function () {
+    Route::get('/entrepreneur', [EntrepreneurDashboardController::class, 'index'])->name('entrepreneur');
+
+    Route::get('/entrepreneur/event', [EntrepreneurEventController::class, 'index'])->name('entrepreneur-event');
+    Route::get('/entrepreneur/event/form', [EntrepreneurEventController::class, 'form'])->name('entrepreneur-event-form');
+    Route::get('/entrepreneur/event/{id}', [EntrepreneurEventController::class, 'show'])->name('entrepreneur-event-show');
+    Route::post('/entrepreneur/event', [EntrepreneurEventController::class, 'store'])->name('entrepreneur-event-post');
+    Route::put('/entrepreneur/event/{id}', [EntrepreneurEventController::class, 'update'])->name('entrepreneur-event-put');
+    Route::delete('/entrepreneur/event/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
+
+    Route::get('/entrepreneur/business', [EntrepreneurBusinessController::class, 'index'])->name('entrepreneur-business');
+    Route::get('/entrepreneur/business/show', [EntrepreneurBusinessController::class, 'show'])->name('entrepreneur-business-show');
+    Route::put('/entrepreneur/business/edit', [EntrepreneurBusinessController::class, 'update'])->name('entrepreneur-business-put');
+    Route::delete('/entrepreneur/business/edit/{id}', [EntrepreneurBusinessController::class, 'destroy'])->name('entrepreneur-business-destroy');
+
+    Route::prefix('entrepreneur/product')->group(function () {
+        Route::get('/index', [EntrepreneurProductController::class, 'index'])->name('entrepreneur-product');
+        Route::get('/form', [EntrepreneurProductController::class, 'form'])->name('entrepreneur-product-form');
+        Route::get('/{id}', [EntrepreneurProductController::class, 'show'])->name('entrepreneur-product-show');
+        Route::post('/store', [EntrepreneurProductController::class, 'store'])->name('entrepreneur-product-store');
+        Route::put('/update{id}', [EntrepreneurProductController::class, 'update'])->name('entrepreneur-product-update');
+        Route::delete('/destroy/{id}', [EntrepreneurProductController::class, 'destroy'])->name('entrepreneur-product-destroy');
+    });
+
+    // Route::get('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'index'])->name('entrepreneur-galery');
+    // Route::get('/entrepreneur/galery/show/{id}', [EntrepreneurGaleryController::class, 'show'])->name('entrepreneur-galery-show');
+    // Route::put('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'update'])->name('entrepreneur-galery-update');
+
+    Route::post('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'store'])->name('entrepreneur-galery-store');
+    Route::delete('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'destroy'])->name('entrepreneur-galery-destroy');
+
+    Route::post('/entrepreneur/sosmed', [EntrepreneurSosmedController::class, 'store'])->name('entrepreneur-sosmed-store');
+    Route::delete('/entrepreneur/sosmed/{id}', [EntrepreneurSosmedController::class, 'destroy'])->name('entrepreneur-sosmed-destroy');
+
+    Route::get('/entrepreneur/profile', [ProfilController::class, 'index'])->name('entrepreneur-profile');
+
+    Route::get('/entrepreneur/complaint', [EntrepreneurComplaintController::class, 'index'])->name('entrepreneur-complaint');
 });
 
 
@@ -146,31 +184,5 @@ Route::middleware(['auth.frontend', 'role:visitor_logged'])->group(function () {
 
 
 
-Route::get('/entrepreneur', [EntrepreneurDashboardController::class, 'index'])->name('entrepreneur');
 
-Route::get('/entrepreneur/event', [EntrepreneurEventController::class, 'index'])->name('entrepreneur-event');
-Route::get('/entrepreneur/event/form', [EntrepreneurEventController::class, 'form'])->name('entrepreneur-event-form');
-Route::get('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'show'])->name('entrepreneur-event-show');
-Route::post('/entrepreneur/event/edit', [EntrepreneurEventController::class, 'store'])->name('entrepreneur-event-post');
-Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'update'])->name('entrepreneur-event-put');
-Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
-
-Route::get('/entrepreneur/business', [EntrepreneurBusinessController::class, 'index'])->name('entrepreneur-business');
-Route::get('/entrepreneur/business/show', [EntrepreneurBusinessController::class, 'show'])->name('entrepreneur-business-show');
-Route::put('/entrepreneur/event/edit/{id}', [EntrepreneurBusinessController::class, 'update'])->name('entrepreneur-event-put');
-Route::delete('/entrepreneur/event/edit/{id}', [EntrepreneurEventController::class, 'destroy'])->name('entrepreneur-event-destroy');
-
-Route::get('/entrepreneur/product', [EntrepreneurProductController::class, 'index'])->name('entrepreneur-product');
-Route::get('/entrepreneur/product/show/{id}', [EntrepreneurProductController::class, 'show'])->name('entrepreneur-product-show');
-Route::post('/entrepreneur/product', [EntrepreneurProductController::class, 'store'])->name('entrepreneur-product-store');
-Route::put('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'update'])->name('entrepreneur-product-update');
-Route::delete('/entrepreneur/product/{id}', [EntrepreneurProductController::class, 'destroy'])->name('entrepreneur-product-destroy');
-
-Route::get('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'index'])->name('entrepreneur-galery');
-Route::get('/entrepreneur/galery/show/{id}', [EntrepreneurGaleryController::class, 'show'])->name('entrepreneur-galery-show');
-Route::post('/entrepreneur/galery', [EntrepreneurGaleryController::class, 'store'])->name('entrepreneur-galery-store');
-Route::put('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'update'])->name('entrepreneur-galery-update');
-Route::delete('/entrepreneur/galery/{id}', [EntrepreneurGaleryController::class, 'destroy'])->name('entrepreneur-galery-destroy');
-
-Route::get('/entrepreneur/profile', [ProfilController::class, 'index'])->name('entrepreneur-profile');
 // Route::get('/entrepreneur/logout', [ProfilController::class, 'index'])->name('entrepreneur-logout');

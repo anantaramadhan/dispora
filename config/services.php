@@ -2,7 +2,7 @@
 
 return [
 
-    'backend_api' => env('BACKEND_URL', 'https://api-ekrafnganjuk.pbltifnganjuk.com'),
+    'backend_api' => env('BACKEND_URL', 'https://api-ekraf.pbltifnganjuk.com'),
 
     /*
     |--------------------------------------------------------------------------

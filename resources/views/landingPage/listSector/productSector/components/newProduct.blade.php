@@ -8,7 +8,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -16,7 +16,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -24,7 +24,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -32,7 +32,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -40,7 +40,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -48,7 +48,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -56,7 +56,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -64,7 +64,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -72,7 +72,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -80,7 +80,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -88,7 +88,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -96,7 +96,7 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
         [
             'gambar' => 'assets/img/logoekraf.png',
@@ -104,10 +104,10 @@
             'price' => 'Rp. 75.000,00',
             'titleBussines' => 'CV. Merdika Utama',
             'contact' => '089635650887',
-            'category' => 'Desain Komunikasi Visual'
+            'category' => 'Desain Komunikasi Visual',
         ],
     ];
-
+    
     // fungsi sort kata
     // function potong_kata($teks, $jumlahKata = 20)
     // {
@@ -119,7 +119,7 @@
     //         return $teks;
     //     }
     // }
-
+    
     ?>
 
     <h2 class="fw-bold text-black mb-0">Produk Terbaru</h2>
@@ -134,7 +134,7 @@
             <div class="p-3">
 
                 {{-- TITLE --}}
-                <a href="{{route('detailProduct')}}" class="text-black text-decoration-none">
+                <a href="{{ route('landingpage-detailProduct') }}" class="text-black text-decoration-none">
                     <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
                 </a>
 

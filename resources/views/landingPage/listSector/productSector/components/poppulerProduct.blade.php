@@ -109,7 +109,7 @@
             'category' => 'Desain Komunikasi Visual',
         ],
     ];
-
+    
     // fungsi sort kata
     // function potong_kata($teks, $jumlahKata = 20)
     // {
@@ -121,7 +121,7 @@
     //         return $teks;
     //     }
     // }
-
+    
     ?>
 
     <div class="overflows d-flex flex-row gap-4 py-4 px-2">
@@ -134,7 +134,7 @@
 
             <div class="p-3 text-black">
                 {{-- TITLE --}}
-                <a href="{{route('detailProduct')}}" class="text-black text-decoration-none">
+                <a href="{{ route('landingpage-detailProduct') }}" class="text-black text-decoration-none">
                     <h4 class="fw-bold mb-0"><?= $item['title'] ?></h4>
                 </a>
 

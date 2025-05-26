@@ -69,7 +69,8 @@
             {{-- DESKRIPSI --}}
             <div class="d-flex flex-column mt-4 mb-4">
                 <p class="fw-bold mb-0">Deskripsi Produk:</p>
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at fringilla
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque felis at
+                    fringilla
                     sagittis. Donec semper tempus ipsum, sed dictum tortor suscipit id. Vivamus luctus nunc eu semper
                     placerat. Pellentesque sed massa efficitur, aliquet sem sed, venenatis erat. Nulla vitae fermentum
                     mauris, sit amet volutpat risus. Sed nec eros id quam convallis ultricies. Vivamus in diam sed est
@@ -92,7 +93,8 @@
                 </div>
                 {{-- TOMBOL LIHAT USAHA --}}
                 <div class="d-flex align-items-center">
-                    <a href="{{route('detailbussines')}}" class="btn btn-primary rounded-5 px-4 w-100">Lihat Usaha</a>
+                    <a href="{{ route('landingpage-detailbussines') }}"
+                        class="btn btn-primary rounded-5 px-4 w-100">Lihat Usaha</a>
                 </div>
             </div>
 

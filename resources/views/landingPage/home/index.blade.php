@@ -67,6 +67,8 @@
     {{-- Section Event dan Artikel --}}
     @include('landingPage.home.components.information.infromation')
 
+
+
     @include('landingPage.layouts.footer')
 
     <script src="{{ asset('assets/js/animate.js') }}"></script>

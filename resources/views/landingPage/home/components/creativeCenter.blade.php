@@ -155,9 +155,10 @@
 
                         <div class="content d-flex flex-column justify-content-between">
                             <h3 class="fw-semibold"><?= $item['title'] ?></h3>
-                            <p class=""><?= potong_kata($item['description']) ?></p>
+                            <p class="text-wrap"><?= potong_kata($item['description']) ?></p>
 
-                            <div class="w-100 d-flex justify-content-end">
+                            <div class="w-100
+                                d-flex justify-content-end">
                                 <a href="" class="btn-detail text-black text-decoration-none"
                                     data-title="<?= htmlspecialchars($item['title']) ?>"
                                     data-description="<?= htmlspecialchars($item['description']) ?>"
@@ -174,7 +175,26 @@
 
             {{-- card bawah --}}
             <div class="overflows pb-4 gap-4 d-flex flex-row element px-4 ">
+                <style>
+                    .overflows {
+                        overflow-x: auto;
+                        /* aktifkan scroll horizontal */
+                        white-space: nowrap;
+                        /* cegah wrap ke bawah */
+                    }
 
+                    .element {
+                        flex-wrap: nowrap !important;
+                        /* paksa isi tetap dalam satu baris */
+                    }
+
+                    .boxSector {
+                        min-width: 300px;
+                        /* atau ukuran sesuai kebutuhan */
+                        flex-shrink: 0;
+                        /* mencegah menyusut */
+                    }
+                </style>
                 <?php foreach ($data2 as $item2): ?>
                 <div class="py-4 px-4 rounded-4 shadow w-auto contentSector zoom-card boxSector">
                     <div class="d-flex flex-column flex-sm-row align-items-center gap-4 ">
@@ -182,7 +202,7 @@
 
                         <div class="content">
                             <h3 class="fw-semibold"><?= $item2['title'] ?></h3>
-                            <p class=""><?= potong_kata($item2['description']) ?></p>
+                            <p class="text-wrap"><?= potong_kata($item2['description']) ?></p>
 
                             <div class="w-100 d-flex justify-content-end">
                                 <a href="" class="btn-detail text-black text-decoration-none"
